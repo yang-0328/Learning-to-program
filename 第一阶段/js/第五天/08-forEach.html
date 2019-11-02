@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           // forEach  可以用来遍历数组
+           var arr = ['小明', '小明','小红', '小张'];
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+        // }
+
+        arr.forEach(function (item, index, array) {
+            // 这个回调函数 有三个参数,
+            // 第一个 :表示  遍历到的元素
+            // 第二个: 遍历到的这个元素对应的 索引
+            // 第三个: 遍历的数组
+            console.log(item, index, array);
+
+        })
+    </script>
+</body>
+</html>

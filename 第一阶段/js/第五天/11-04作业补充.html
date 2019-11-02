@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        var a = ['A1','A2','B1','B2','C1','C2','D1','D2']
+        var b = ['A','B','C','D']
+        var newArr = []                   // 建个空数组
+        
+        for(var i=0;i<a.length;i++){      // 把a数组push到新数组中
+            newArr.push(a[i])
+            if(i>0&&(i+1)%2==0){          // 当数组索引大于0，且为2的倍数，把b数组的元素push到新数组       
+                newArr.push(b[((i+1)/2)-1])
+            }
+        }
+        console.log(newArr)
+</body>
+</html>

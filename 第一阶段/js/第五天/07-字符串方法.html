@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'how are you? and you?';
+        console.log(str.length);     //21个字符
+
+        //charAt() 获取相应位置的字符
+        //charCodeAt() 指定位置字符 的Unicode 编码
+
+        console.log(str.charAt(5));//r
+        console.log(str.charAt(4));//a
+
+        console.log(str.charCodeAt(5)); //114 r 对应的 unicode编码
+
+
+        // indexOf() 返回字符在字符串中的位置
+        //instIndexOf()
+        console.log(str.indexOf('y'));//8
+        console.log(str.lastIndexOf('y'));//17
+
+        // concat()链接字符串
+        var str2 = 'me too';
+        console.log(str.concat(str2));
+
+        //slice() 提取字符串的某个部分
+        console.log(str.slice(1, 9));// 'ow are y'
+        //substr() 截取字符串
+        //substr (起始位置,[取得个数]) 截取字符串 返回截取的字符串
+        console.log(str.substr(0, 5));// 'how a'
+
+
+        console.log(str.substr(0, str.length - 1));
+
+        // toUpperCase()
+        // toLowerCase()
+        console.log(str.toUpperCase()); // HOW ARE YOU? AND YOU?
+
+
+        // 思考 :  如何实现  大写变小写,小写变大写?
+    </script>
+</body>
+</html>

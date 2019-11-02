@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            /* 开启相对定位 */
+            width: 500px;
+            height: 400px;
+            background-color: red;
+            margin: 20px;
+        }
+        .iner-box{
+            /* 开启绝对定位 */
+            /* 有参照物 */
+            /* 找他离得最近具有定位属性的 祖先元素 找不到就相对于窗口定位 */
+            position: absolute;
+            /* 宽度此时有内容撑开 */
+            left: 50px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color:#333;
+        }
+        /* 一般使用绝对定位会同时为父类u元素制定一个相对定位 以确保元素可以相对于父类元素进行定位 */
+        /* 子绝父相 */
+        .box2{
+            height: 20px;
+            background-color: green;
+        }
+        span{
+            position: absolute;
+            /* 变成块元素 */
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background-color: pink;
+
+        }
+        .footer{
+            height: 2000px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+        <div class="box2">
+
+        </div>
+        <span>
+            
+        </span>
+    </div>
+    <div class="footer">
+
+    </div>
+</body>
+</html>

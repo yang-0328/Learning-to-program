@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 100;
+    function add(x, y){
+        var sum = x + y;
+        console.log(sum);
+        return sum;// 返回 sum 相当于  把 sum 这个变量 当做add函数的结果 给 丢出去了
+            // 另外一个 作用  return 下边的代码 不再执行相当于  跳出函数
+    } 
+    add(1, 2)
+
+    console.log(add(1, 2) + a);
+        // 我想拿到 求和的结果,在函数外边做其他的事情? 
+        // 函数外边  是拿不到  sum 这个变量
+        // console.log(sum); // sum is not defined
+        // console.log(add(3, 5) * a); // NaN
+        // console.log(add(3, 5)); // undefined
+
+        // 天上 return sum  之后
+        // console.log(add(3, 5) * a); // 800
+        // console.log(add(3, 5)); // 8
+    var b = add(1, 2);
+    </script>
+</body>
+</html>

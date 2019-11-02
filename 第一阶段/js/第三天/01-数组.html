@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字面量定义:
+        var arr = [1, 2, 3]
+
+        // 对象定义(数组构造函数)
+
+        var arr = new Array ();
+        // 如果参数为空，则表示创建一个空数组；参数位置是一个数值时，表示数组长度；
+        // 参数位置是多个数值时，表示数组中的元素。
+
+
+
+        // 向数组添加元素
+
+        // 语法:
+        // 数组 [索引] = 值;
+        var arr1 = [];
+        //添加元素
+        arr [0] = 10;
+        arr [1] = 33;
+        arr [2] = 44;
+        arr [3] = 55;
+
+
+        // 获取数组中的元素
+
+        // 数组 [索引];
+        // 数组的索引代表的是数组中的元素在数组中的位置，从 0 开始。
+
+        // 如果读取不存在的索引（比如元素没那么多），系统不会报错，而是返回 undefined。
+        var arr = [21, 34, 45];
+        console.log(arr[1]);//结果:34
+        console.log(arr[9]); //打印结果:undefied;
+
+
+        // 获取数组的长度
+        // 语法:数组的长度 = 数组名 .length
+        var arr = [21 ,22, 23];
+        console.log(arr.length);
+              // 补充：
+            // 对于连续的数组，使用 length 可以获取到数组的长度（元素的个数）；
+            // 对于非连续的数组，使用 length 会获取到数组的最大的索引+1。
+            // 因此，尽量不要创建非连续的数组。
+          
+             //修改数组长度( 修改length)
+             //如果修改的 length 大于原长度，则多出部分会空出来，置为 null。
+            //如果修改的 length 小于原长度，则多出的元素会被删除，数组将从后面删除元素。
+
+            var arr1 = [11, 12, 13];
+            var arr2 = [21, 22, 34]
+            //修改数组 arr1 的length
+            arr1.length = 1;
+            console.log(arr1);//结果 [11]
+            //修改数组 arr2 的length
+            arr2.length = 5; //结果:[21, 22, 34 null, null ]
+            console.log(arr2);
+
+
+        //遍历数组元素
+
+        var arr = ['张三', '李四', '王五', 'john']
+        //1.for 循环
+        for ( i = 0 ; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        //2. for in
+        for (var key in arr ){
+            console.log(arr[key]);
+        }
+
+
+        // 数组的基本方法
+
+        // push( ) 向数组最后面插入一个或多个元素, 返回结果为 该数组新的长度;
+
+        //语法: 数组 .push(元素);
+        var arr = ['网易', '网二', '网三'];
+        var result1 = arr.push('往事');//末尾插入一个结果
+        var result2 = arr.push('网六', '网七');//末尾插入多个元素;
+        
+        console.log(result1);//打印结果4
+        console.log(result2);//打印结果6
+        console.log(arr);
+
+        // pop():删除数组中的最后一个元素, 返回结果为被删除的元素,
+        // 语法;数组.pop();
+
+        var arr = ['王一','王二', '王三',];
+        var result1 = arr.pop();
+        console.log(result1);// 打印结果：王三
+        console.log(arr);// 打印结果：["王一","王二"]
+
+
+        // unshift():在数组最前面插入一个或多个元素，返回结果为该数组新的长度。
+        // 插入元素后，其他元素的索引会依次调整。
+        //语法: 数组.unshift(元素);
+
+        var arr = ['王一','王二','王三'];
+        var result1 = arr.unshift('王四');// 最前面插入一个元素
+        var result2 = arr.unshift('王五','王六');// 最前面插入多个元素
+
+        console.log(result1);// 打印结果：4
+        console.log(result2);// 打印结果：6
+        console.log(arr); // 打印结果：["王五","王六","王四","王一","王二","王三"]
+
+
+
+        // shift():删除数组中的第一个元素,返回结果为被删除的元素;
+
+        // 语法;数组.shift()
+
+        var arr = ['王一', '王二' ,'王三'];
+        var result1 = arr.shift();
+
+        console.log(result1); // 打印结果：王一
+        console.log(arr); // 打印结果：["王二","王三"]
+
+
+
+        // concat();连接两个或多个数组,返回结果为新的数组;(不会改变原数组)
+
+        // 语法:新数组= 数组1.concat(数组2,数组3 ...);
+
+        var nameArr1 = ['张三', '李四'];
+        var nameArr2 = ['王五', '李四'];
+        var nameArr = nameArr1.concat(nameArr2);
+        console.log(nameArr);//['张三','李四','王五','赵六']
+        console.log(nameArr1); // ['张三','李四']
+        console.log(nameArr2); // ['王五','赵六']
+        // 并未改变原数组，所以我要用一个新数组nameArr去接收合并后的数组，
+        // 以便后续使用。
+
+
+
+
+        // join(): 将数组转换为字符串，返回结果为转换后的字符串（不会改变原来的数组）。
+
+        //补充：join()方法可以指定一个字符串作为参数，这个字符串将会成为数组中元素的连接符；
+        // 如果不指定连接符，则默认使用 , 作为连接符，此时和 toString()的效果是一致的。
+
+        // 语法;新的字符串 = 原数组.join(参数);//参数选填
+
+        var arr = [1, 2, 3];
+        var arrStr = arr.join('-');
+         console.log(arrStr); // 1-2-3
+        console.log(arr); // [1,2,3]
+        // 并未改变原数组
+
+
+
+    // split(): 通过指定分隔符，如果省略，默认以逗号分隔，将字符串分割为字符串数组。
+    // 第二个参数，制定返回数组的最大长度。
+    var email =  "abc@163.com;cc@126.com;frg@qq.com";
+        var emailArr = email.split(";");
+        console.log(emailArr);// ["abc@163.com", "cc@126.com", "frg@qq.com"]
+        var emailArr2 = email.split(";", 2);
+        var emailArr = email.split(";"); // ["abc@163.com", "cc@126.com"]
+
+
+        //数组使用案例
+        //求数组平均值
+
+        var arr = [31, 41, 1, 23, 32, 32];
+        // 计算数组元素的和,获取数组元素个数,求平均值
+        var sum = 0;
+        for (var i = 0 ; i < arr.length; i++){
+            sum += arr [ i ] ;
+
+        }
+        var avg = sum / arr.length;
+        console.log(avg);
+
+    </script>
+</body>
+</html>

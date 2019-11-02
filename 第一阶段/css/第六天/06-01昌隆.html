@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            bottom: 0;
+        }
+    ul,
+    ol{
+        list-style: none;
+    }
+    
+        a{
+            text-decoration: none;
+        }
+        .top{
+            width: 100%;
+            height: 37px;
+            background-color: #2e3139;
+
+            }
+        .header{
+            height:96px;
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+        .banner{
+            width: 100%;
+            height: 400px;
+            background-color: #134979;
+        }
+        .main{
+            height: 780px;
+            width: 100%;
+            background-color:#f2f2f2 ;
+        }
+        .footer{
+            width: 100%;
+            height: 204px;
+            background-color: #2e3139;
+        }
+        .zx{
+            width: 141px;
+            height: 181px;
+            background-color: #ffffff;
+        }
+        
+        .top-c,
+        .header-c,
+        .banner-c,
+        .main-c,
+        .footer-c{
+            position: relative;
+            width: 1000px;
+            height: 100%; 
+           margin: 0 auto;
+           /* background-color: red; */
+        }
+        
+        .top .top-c p{
+            float: left;
+            font-size: 14px;
+            color: #969696;
+            line-height:37px;
+        }
+        .top a{
+            float: right;
+            font-size: 14px;
+            color: #969696;
+            line-height: 37px;
+          
+        }
+        
+        .top .setting-c{
+           border-left: 1px solid #969696;
+           padding-left: 14px;
+      
+        }
+        .top .setting-y{
+            border-right: 1px solid #969696;
+           padding-right:14px;
+      
+        } 
+      
+       
+        .header .logo{
+            width: 180px;
+            height: 100%;
+            float: left;
+            background: url("img/logo.jpg") no-repeat center;
+        }
+        .header .nav{
+            overflow:hidden;
+
+        }
+        .header .nav .nav-c{
+            float: right;
+        
+            line-height:96px; 
+            margin-left: 57px;
+            font-size: 16px;
+            color: #5a5a5a;
+            
+            /* text-decoration: underline; */
+            /* padding-bottom: 8px; */
+        }
+        
+        .header .nav .nav-c:hover{
+            color:#03579e;
+             text-decoration: underline; 
+        }
+        .banner .src{
+            position: relative;
+            height: 400px;
+
+            background:url("img/src.jpg") no-repeat ;
+        }
+        .banner .src-c{
+            position: absolute;
+            left: 0;
+            bottom: 12px;
+            width: 24px;
+            height: 4px;
+            border: 1px solid  #4280ba ;
+            background-color: #4280ba;
+        }
+        .banner .src-c-y{
+            position: absolute;
+            left: 30px;
+            bottom: 12px;
+            width: 24px;
+            height: 4px;
+            background-color: #d1d1d1;
+            border: 1px solid  #4280ba ;
+        }
+        .main .chanpin {
+            overflow:hidden;
+            position: relative;
+            margin-top: 39px;
+            height: 223px;
+        }
+        .main .chanpins-top{
+           top: 3px;
+            left: 0px;
+            position: absolute;
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+       
+        }
+        .main .chanpins-bottom{
+            position: absolute;
+            top: 15px;
+            left: 0;
+            /* padding: 10px 0; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+        }
+        .main .shanpin-y{
+            position: absolute;
+           float: left;
+            top:0;
+            left: 21px;
+            font-size: 18px;
+            color: #5a5a5a;
+        } 
+        .main .shanpin-w{
+            position: absolute;
+            float: left;
+            top:3px;
+            left:113px;
+            font-size: 14px;
+            color: #5a5a5a;
+        } 
+        .main .shanpin-q{
+            position: absolute;
+            float: right;
+            top: 0;
+            right: 0px;
+            font-size: 14px;
+            color: #5a5a5a;
+        } 
+        .main .chanpin .span{
+            border-bottom: 1px solid #cfcfcf;
+            margin-top: 28px;
+        }
+        .main .picture {
+            /* text-align: center; */
+            position: relative;
+            padding-top: 17px;
+        }
+      
+        .main .picture-1{
+           
+           float: left;
+        margin-left: 5px; 
+           width: 244px;
+           height: 141px;
+           background-color: #ffffff;
+           width: 234px;
+           height: 141px;
+           background: url("img/chanpin1.jpg") no-repeat;
+            padding-right:18px;
+       }
+        .main .picture-2{
+           
+            float: left;
+            width: 244px;
+            height: 141px;
+            background-color: #ffffff;
+            width: 234px;
+            height: 141px;
+            background: url("img/chanpin2.jpg") no-repeat;
+             padding-right:18px;
+        }
+        .main .picture-3{
+             padding-right:18px;
+            float: left;
+            width: 244px;
+            height: 141px;
+            background-color: #ffffff;
+            width: 234px;
+            height: 141px;
+            background: url("img/chanpin3.jpg") no-repeat;
+        }
+        .main .picture-4{
+            float: left;
+            width: 244px;
+            height: 141px;
+            background-color: #ffffff;
+            width: 234px;
+            height: 141px;
+            background: url("img/chanpin4.png") no-repeat;
+        }
+
+/* 
+        .main .picture{
+
+           margin-bottom: 30px;
+        } */
+        .main .picture .text-1{
+            position: absolute;
+            top: 170px;
+            left: 43px;
+            font-size: 15px;
+            color: #3a3a3a;
+        }
+         .main .picture .text-2{
+            position: absolute;
+            top: 170px;
+            left:346px;
+            font-size: 15px;
+            color: #3a3a3a;
+        } 
+        .main .picture .text-3{
+            position: absolute;
+            top: 170px;
+            left: 587px;
+            font-size: 15px;
+            color: #3a3a3a;
+        }
+        .main .picture .text-4{
+            position: absolute;
+            top: 170px;
+            left:859px;
+            font-size: 15px;
+            color: #3a3a3a;
+            /* motion: 30px; */
+        }
+       /* .main .int{
+           overflow:hidden;
+            position: relative;
+            margin-top: 39px;
+            height: 223px;
+       
+           padding-top: 57px; */
+
+      
+      .main .company{
+        overflow:hidden;
+        /* bottom: 223px; */
+        /* position: absolute; */
+        /* top: 56px; */
+        /* top: 256px;  */
+        /* top: 100px; */
+         /* padding-top: 56px;  */
+        margin-top: 56px;
+        height: 277px;
+        width: 100%;
+        /* background: red; */
+        /* background-color: red; */
+      }
+
+      .main .company-top{
+          
+            left: 0px;
+            bottom: 223px;
+            top: 283px;
+            position: absolute;
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+       
+        }
+        .main .company-bottom{
+            position: absolute;
+            top: 295px;
+            left: 0;
+            /* padding: 10px 0; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+            }
+            .main .company-y{
+            position: absolute;
+           float: left;
+            top:280px;
+            left: 21px;
+            font-size: 18px;
+            color: #5a5a5a;
+        } 
+        .main .company-w{
+            position: absolute;
+            float: left;
+            top:283px;
+            left:113px;
+            font-size: 14px;
+            color: #5a5a5a;
+        } 
+        .main .company-q{
+            position: absolute;
+            float: right;
+            top: 283px;
+            right: 0px;
+            font-size: 14px;
+            color: #5a5a5a;
+        } 
+        .main .company .company-o{
+            border-bottom: 1px solid #cfcfcf;
+            margin-top: 28px; 
+            /* position: absolute */
+        }
+       .main .company .information{
+           width: 300px;
+           float: left;
+           height: 170px;
+           margin-top: 25px;
+           position: relative;
+           background-color: #ffffff;
+           background: url("img/dizhi.jpg") no-repeat ;
+       } 
+       .main .company .info {
+           /* font-size: 14px; */
+           /* color: #6d6d6d; */
+           width: 675px;
+           height: 170px;
+            /* position: absolute;  */
+            /* right: 888px; */
+            float: left; 
+            margin-top:25px;
+            padding-left: 25px;
+       }
+       .main .company .info h3{
+            font-size: 16px;
+            color: #3a3a3a;
+            font-weight: bolder;
+       }
+       .main .company .info p{
+        text-indent: 2em;
+            font-size: 14px;
+            color: #6d6d6d;
+            line-height: 24px;
+       }
+       .main .contact{
+           float: left;
+           width: 296px;
+           height: 177px;
+            /* background: red;  */
+           
+       }
+       .main .companynewc{
+           margin-left: 27px;
+           float: left;
+            width: 677px;
+           height: 177px;
+           /* background: red; */
+       }
+       
+      .main .contact .contact-top{
+             top: 556px;
+            /* position: absolute; */
+            left: 0px;
+            position: absolute; 
+           /* margin-top: 10px; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+       
+        }
+        .main .contact .contact-bottom {
+             position: absolute; 
+             top: 566px;
+           
+            left: 0;
+            /* padding: 10px 0; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+            }
+             .main .contact-y{
+            position: absolute;
+           float: left;
+            top:552px;
+            left: 21px;
+            font-size: 18px;
+            color: #5a5a5a;
+        } 
+        .main .contact-w{
+            position: absolute;
+            float: left;
+            top:556px;
+            left:113px;
+            font-size: 14px;
+            color: #5a5a5a;
+        }  
+        .main .contact-o{
+
+            border-bottom: 1px solid #cfcfcf;
+            margin-top: 28px;
+        }
+        .main .contact-a{
+            float: left;
+            line-height:25px;
+            font-size: 15px;
+            color: #3a3a3a;
+            padding: 0;
+            padding-top: 22px;
+        }
+
+       .main .companynewc-top{
+        top: 556px;
+            /* position: absolute; */
+            left: 327px;
+            position: absolute; 
+           /* margin-top: 10px; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+       }
+       .main .companynewc-bottom {
+             position: absolute; 
+             top: 566px;
+           
+            left: 327px;
+            /* padding: 10px 0; */
+            border: 0px solid #11589d;
+            width: 6px;
+            height: 6px;
+            background-color: #11589d;
+            }
+            .main .companynewc-y{
+            position: absolute;
+           float: left;
+            top:552px;
+            left: 348px;
+            font-size: 18px;
+            color: #5a5a5a;
+        } 
+        .main .point0 {
+            position: absolute; 
+             top: 617px;
+           
+            left: 327px;
+            /* float: left; */
+            /* line-height:25px; */
+            /* padding-bottom: 5px; */
+            /* float: left; */
+             border: 0px solid #b2b2b2; 
+            width:4px;
+            height: 4px;
+            background-color: #b2b2b2;
+        }
+        .main .point1 {
+            position: absolute; 
+             top: 642px;
+           
+            left: 327px;
+            /* float: left; */
+            /* line-height:25px; */
+            /* padding-bottom: 5px; */
+            /* float: left; */
+             border: 0px solid #b2b2b2; 
+            width:4px;
+            height: 4px;
+            background-color: #b2b2b2;
+        }
+        .main .point2 {
+            position: absolute; 
+             top: 667px;
+           
+            left: 327px;
+            /* float: left; */
+            /* line-height:25px; */
+            /* padding-bottom: 5px; */
+            /* float: left; */
+             border: 0px solid #b2b2b2; 
+            width:4px;
+            height: 4px;
+            background-color: #b2b2b2;
+        }
+        .main .point3 {
+            position: absolute; 
+             top: 693px;
+           
+            left: 327px;
+            /* float: left; */
+            /* line-height:25px; */
+            /* padding-bottom: 5px; */
+            /* float: left; */
+             border: 0px solid #b2b2b2; 
+            width:4px;
+            height: 4px;
+            background-color: #b2b2b2;
+        }
+        .main .point4 {
+            position: absolute; 
+             top: 718px;
+           
+            left: 327px;
+            /* float: left; */
+            /* line-height:25px; */
+            /* padding-bottom: 5px; */
+            /* float: left; */
+             border: 0px solid #b2b2b2; 
+            width:4px;
+            height: 4px;
+            background-color: #b2b2b2;
+        }
+        .main .companynewc-w{
+            position: absolute;
+            float: left;
+            top:556px;
+            left:440px;
+            font-size: 14px;
+            color: #5a5a5a;
+        }  
+        .main .companynewc-q{
+            position: absolute;
+            float: right;
+            top: 556px;
+            right: 0px;
+            font-size: 14px;
+            color: #5a5a5a;
+        } 
+        .main .companynewc-o{
+
+            border-bottom: 1px solid #cfcfcf;
+            margin-top: 28px;
+            }
+            .main .companynewc-a{
+            float: left;
+            text-indent: 20px;
+            line-height:25px;
+            font-size: 15px;
+            color: #3a3a3a;
+            padding: 0;
+            padding-top: 22px;
+        }
+        .main .companynewc-a .se{
+            text-indent: 10px;
+            color: #3a3a3a;
+            font-size: 15px;
+            line-height:25px;
+
+
+        }
+        .main .time{
+            padding-top: 22px;
+            color: #3a3a3a;
+            line-height:25px;
+            width: 90px;
+            float: right;
+            font-size: 15px;
+            
+        }
+        .footer .links{
+            text-align: center;
+        }
+        .footer .links a{
+            /* float: left; */
+			height: 12px;
+            font-size: 12px;
+            color: #bbbfcb;
+			line-height: 60px;
+            
+			 margin: 0px 10px; 
+        }
+        .footer .copy-right{
+            text-align: center;
+            color: #bbbfcb;
+            font-size: 12px;
+        }
+        .footer .Theurl{
+            padding-top:20px ;
+            text-align: center;
+            color: #bbbfcb;
+            font-size: 12px;
+        }
+        .footer .Serialnumber{
+            padding-top:20px ;
+            text-align: center;
+            color: #bbbfcb;
+            font-size: 12px;
+        }
+       .zx {
+            position: fixed;
+            left: 50%;
+            bottom: 100px;
+            margin-left: 520px;
+            width: 141px;
+            height: 181px;
+            border: 1px solid #ffffff;
+        }
+        .zx .consulting{
+            position: relative;
+            font-size: 16px;
+            text-align: center;
+            padding-top: 17px;
+            /* color: red; */
+        }
+        .zx .qq{
+
+            border-radius:5%;
+            margin-left: 24px;
+           margin-top:10px;
+            width: 96px;
+            height: 34px;
+            background: #f18927 ;
+            border: 1px solid #f18927;
+            /* background: url("img/qq.jpg") no-repeat left; */
+        }
+        .zx .qq .qq1{
+            float: left;
+            margin-top: 6px;
+            margin-left: 6px;
+            width: 20px;
+            height: 20px;
+            background: url("img/qq.png") no-repeat left;
+        }
+        .zx .qq .dian a{
+            float: left;
+            
+            margin-top: 6px;
+           margin-left: 7px;
+            font-size: 14px;
+            color: #ffffff;
+        } 
+       .zx .thephone{
+            /* margin-right:42px;  */
+            position: relative;
+            margin-left: 20px;
+           width: 56px;
+           /* height: 22px; */
+           margin-top: 45px; 
+          /* width: 56px;  */
+           height: 22px 
+          /* border： 1px solid #f18927; */
+          }
+
+
+      
+       .zx .thephone0{
+           position: absolute;
+       
+           width: 18px;
+           height: 21px;  
+           background: url("img/dianhua.png") no-repeat;
+       }
+       .zx .thephone1{
+        margin-left:20px;
+           float: right;
+           font-size: 16;
+           color: #1185bb;
+       }
+       .zx .shuzi{
+           position: absolute;
+           width: 100%;
+           height: 60px;
+       }
+       .zx .shuzi0 {
+        text-align: center;
+         /* width:100%; 
+         height: 13px; */
+           /* height: 15px; */
+           position: relative;
+            top:5px;
+            color: #616161;
+            font-size: 15px;
+       }
+       .zx .shuzi1 {
+           text-align: center;
+            top: 10px;
+           position: relative;
+            color: #616161;
+            font-size: 15px;
+       }
+      
+    </style>
+
+</head>
+<body>
+    <!-- 头 -->
+    <div class="top">
+        <div class="top-c">
+            <p class="name">欢迎莅临河南省巩义市昌隆精化有限公司！</p>
+            <div class="setting">
+                 <a  class="setting-c"href="#">设为首页</a>
+                 
+                 <a   class="setting-y" href="#">收藏本站</a>
+            </div>
+            
+        </div>
+    </div>
+
+<!-- logo -->
+    <div class="header">
+        <div class="header-c">
+            <div class="logo">
+                <a class="logo" href="#"></a>
+            </div>
+            <div class="nav">
+                <a class="nav-c" href="#">联系我们</a>
+                <a class="nav-c" href="#">诚招英才</a>
+                <a class="nav-c" href="#">新闻动态</a>
+                <a class="nav-c" href="#">产品中心</a>
+                <a class="nav-c" href="#">公司简介</a>
+                <a class="nav-c" href="#"> 首页</a>
+            </div>
+        </div>
+    </div>
+    <!-- 宣传图 -->
+    <div class="banner">
+        <div class="banner-c">
+            <div class="src">
+                <div class="src-c">
+
+                </div>
+                <div class="src-c-y">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 广告 -->
+    <div class="main">
+        <div class="main-c">
+            <div class="chanpin">
+               
+                <span class="chanpins-top"></span>
+                <span class="chanpins-bottom"></span>
+                
+                <span class="shanpin-y">产品中心</span> 
+                <span  class="shanpin-w">PRODUCTS</span>
+               
+                <a  class="shanpin-q"href="#">more></a>
+                <div class="span">
+                </div>
+                <div class="picture">
+
+                <div class="picture-1"> </div>
+               
+                <p class="text-1">速溶硅酸钠/粉状硅酸钠 </p>
+
+                <div class="picture-2"> </div>
+                <p class="text-2"> 水玻璃</p>
+               
+
+                <div class="picture-3"></div>
+                
+                <p class="text-3">固体硅酸钠 </p>
+
+                <div class="picture-4"> </div>
+               
+                <p class="text-4">硅溶胶 </p>
+           
+         </div>
+        </div>
+        <!-- </div> -->
+         <div class="company">
+                <span class="company-top"></span>
+                <span class="company-bottom"></span>
+                <span class="company-y">公司简介</span> 
+                <span  class="company-w">COMPANY PRODUCTS</span>
+                <a  class="company-q"href="#">more></a>
+                <div class="company-o"></div>  
+                <div class="information">
+        </div>
+                       <!-- <div class="the">  -->
+                        <div class="info">
+                           <h3>河南省巩义市昌隆精化有限公司<h3>
+
+                    
+                    <p>
+                            巩义市昌隆精化有限公司位于人杰地灵的杜甫故里巩义市，成立于1999年，经过近17年的不懈努力,我们
+                            已成为国内最专业的硅酸钠类产品生产厂家，郑州地区居同行业之首。
+                     </p>       
+                      <p >             公司主要生产固体、液体、粉状、钾钠等多种规格的泡花碱，其中年生产固体2万吨以上，液体5万吨速溶
+                            硅酸钠千余吨，并可根据用户需要生产特殊规格的泡花碱。我们以稳定的产品质量、优质的服务赢得了广大客
+                            户的信赖和支持，产品畅销全国以及世界各个国家和地区。公司在立足国内市场的同时，积极开拓国际市场。
+                            目前产品已销往东南亚、欧洲等国家和地区。公司愿与有志之士协同合作，互利共赢！
+                            
+                    </p>
+                </div>
+               
+                <!-- </div> -->
+             </div>   
+            <div class="contact">
+                    <span class="contact-top"></span>
+                    <span class="contact-bottom"></span>
+                    <span class="contact-y">联系我们</span> 
+                    <span  class="contact-w">CONTACT US</span>
+                    <div class="contact-o"></div>  
+                    <ul class="contact-a">
+                        <li>电  话:&nbsp;&nbsp;    0371-4124378</li>
+                        <li>手  机:&nbsp;&nbsp;    13598855556（李经理）</li>
+                        <li>传  真:&nbsp;&nbsp;    010-80210483</li>
+                        <li>邮  箱:&nbsp;&nbsp;    clhg@163.com</li>
+                        <li>地  址:&nbsp;&nbsp;    河南省巩义市北山口汽车站南200米</li>
+                    </ul>
+            </div>
+            <div class="companynewc">
+                    <span class="companynewc-top"></span>
+                    <span class="companynewc-bottom"></span>
+                    <span class="companynewc-y">新闻动态</span> 
+                    <span  class="companynewc-w">COMPAY&nbsp;&nbsp;&nbsp;&nbsp;NEWS</span>
+                    <a  class="companynewc-q"href="#">more></a>
+                    <div class="companynewc-o"></div> 
+
+                         <span class="point0"></span>
+                        <span class="point1"></span>
+                        <span class="point2"></span>
+                        <span class="point3"></span>
+                        <span class="point4"></span>
+                
+                    
+                    <ul class="companynewc-a" >
+                     
+                           <li > <a class="se"href="#">生产固体泡花碱销售前景如何</a> </li>
+                           <li> <a class="se" href="#">水玻璃的化学成分密度模数对水玻璃的性能有什么影响 </a> </li>
+                           <li > <a class="se" href="#">昌隆泡花碱告知你硅酸钠水溶液的技术指标</a> </li>
+                           <li > <a class="se" href="#">生产固体泡花碱销售前景如何 </a> </li>
+                           <li > <a class="se" href="#">生产固体泡花碱销售前景如何</a> </li>
+                    </ul>
+                     
+                    <ul class="time">
+                        <li>2016-07-08</li>
+                        <li>2016-07-08</li>
+                        <li>2016-07-08</li>
+                        <li>2016-07-08</li>
+                        <li>2016-07-08</li>
+                    </ul>
+           </div>
+         <!-- <span class="company-o"></span> -->
+     </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="footer">
+        <div class="footer-c">
+            <div class="links">
+                <a href="#">公司介绍</a>
+                |
+                <a href="#">公司介绍</a>
+                |
+                <a href="#">公司介绍</a>
+                |
+                <a href="#">公司介绍</a>
+                |
+                <a href="#">公司介绍</a>
+                |
+                <a href="#">公司介绍</a>
+                
+            </div>
+            <div class="copy-right">
+                    河南省巩义市昌隆精化有限公司&nbsp;&nbsp;&nbsp;&nbsp;公司地址：&nbsp;&nbsp;巩义市北山口汽车站南200米 &nbsp;&nbsp;&nbsp;&nbsp;手机：13598855556
+            </div>
+            <div class="Theurl">
+                    电话：0371-64124378 &nbsp;&nbsp;邮编&nbsp;&nbsp450000 &nbsp;&nbsp;&nbsp;&nbsp;邮箱：gychanglong@163.com &nbsp;&nbsp;网址：http://www.clphj.com 
+            </div>
+            <div class="Serialnumber">
+                    豫ICP备12013179号-1
+            </div>
+        </div>
+    </div>
+    <!-- 固定联系 -->
+    <div class="zx">
+        <div class="zx-c">
+            <div class="consulting">点击QQ咨询
+
+            </div>
+            <div class="qq">
+                <div class="qq1">
+                    <a cass="qq1" href="#"></a>
+                </div>
+                <div class="dian">
+                    <a href="#">点击查询</a>
+                    
+                </div>
+
+                <div class="thephone">
+                    <div class="thephone0">
+
+                 </div>   
+                    <div class="thephone1">
+                        电话
+                    </div>
+                </div>
+                
+            </div>
+            <div class="shuzi">
+                 <div class="shuzi0">
+                    0372-4124372
+                       
+                 </div>   
+                 <div class="shuzi1">
+                        1359-8855556
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

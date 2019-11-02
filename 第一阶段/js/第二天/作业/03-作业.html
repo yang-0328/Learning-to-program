@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(var i = 1; i<=66; i++){
+            if( i % 7 == 0 || (i % 20 ) ==7){
+               continue;}
+                console.log(i);
+            }
+            var sum = 0;
+            for(var i = 1; i<=100; i++){
+                sum = sum + i;
+                
+            }alert(sum);
+
+            var sum = 1
+            for(var i = 1; i <= 13; i++){
+                sum = sum * i ;
+            }alert(sum);
+
+            var a = prompt("请输入数字");
+            var sum = 0;
+            for (var i = 1 ; i <= a ; i++){
+                if(a % i == 0 ){
+                   sum ++; 
+                }
+            }alert(sum)
+
+
+    </script>
+</body>
+</html>

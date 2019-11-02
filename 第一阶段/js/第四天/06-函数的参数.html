@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 参数 分为   :  形参  和  实参
+        // 多个形参之间使用,隔开，声明形参就相当于在函数内部声明了对应的变量，但是并不赋值。
+
+        function add(x, y){
+            if(typeof x !== 'number' || y !== 'number'){
+                console.log('参数类型不符合要求');
+                return//返回. 下面的代码,不再执行
+            }
+            console,log(x+y);
+
+        }
+        add(2,3);
+        // 当调用的时候 是不是要告诉这个函数  求 那两个数的和
+        // 实参将会赋值给函数中对应的形参。
+
+        // x ,y 就是  add 函数的 形参  用来占位(用来接收实际参数)
+        // 3,5  就是  实参 真正参与 代码运算(执行)
+
+
+        // 实参和 形参的  个数通常是 一致的
+
+
+        // 实参比形参个数多 ?  多余的实参不会参与运算
+        // 形参比实参多?
+        add(10); // x+y ===>10+y==>10+undefined====>NaN 
+    </script>
+</body>
+</html>

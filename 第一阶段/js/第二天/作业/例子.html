@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    for(var i = 1; i <= 60 ; i++){
+if(i%7 == 0 || i%10 == 7){
+console.log(i);
+}
+}
+
+
+        //用户输入一个数字
+        var num = parseInt(prompt("请输入数字"));
+        // 找因数
+        // 比如用户输入48，要从1~48，分别让48除以这个数
+        // 穷举法
+        var amount = 0;     //个数，累加器
+        for(var i = 1 ; i <= num ; i++){
+            if(num % i == 0){
+                // console.log(i);      //不想输出
+                amount++;       //自增1
+            }
+        }
+    </script>
+</body>
+</html>

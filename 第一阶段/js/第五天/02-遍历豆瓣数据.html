@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="douban.js"> </script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(movies);   
+        //获取每一部电影的名字
+        //获取 打印 每一部电影的主演名字
+        //思考 把电影名字 和主角名字 合并到同一行去打印 (拼接字符串)
+        
+        //作业: 电影名字:西红柿首富导演名字:(拼接一块)
+        var movieArr = movies.subjects;
+        console.log(movieArr);
+        for (var i = 0 ; i < movieArr.length; i++){
+            var title = movieArr[i].title;
+            var str = '电影名字:' + title + ',导演:';
+            var castArr = movieArr[i].directors;
+            for(var j = 0 ; j < castArr.length; j++){
+                str += castArr[j].name +'/';
+
+            } 
+            console.log(str.substr(0,str.length -1));
+            // console.log(str)
+        } 
+
+          
+    
+    </script>
+</body>
+</html>

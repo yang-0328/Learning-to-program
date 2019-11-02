@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方式一 直接创建
+        var user = {
+            name: '张三',
+            sex: '男',
+            avater: 'img/po.png',
+            text: '备注信息',
+            say: function() {
+                alert('你好')
+            }
+        }    
+        //方式二 使用 new 关键字调用函数  是构造函数 constructor,构建函数是专门用来创建对象的函数
+        // 首字母大写的 函数 通常是构造函数
+
+        var obj = new Object();
+        console.log(obj);
+        // 语法 对象.属性名;
+        //获取对象的某一个属性
+        console.log(user.name);
+        console.log(user.avater);
+
+        //修改 对象的某一个属性
+        user.sex = '女';
+        console.log(user);
+        
+        // 增加新的属性
+        user.age = 24;
+        user.sing = function(){
+            alert('唱歌');
+        }
+        console.log(user);
+
+
+        // 删除某个属性
+
+        delete user.text;
+        console.log(user);
+
+
+        //获取对象没有的属性时 拿到的结果 是 undefined
+        console.log(user.height);// undefined
+
+        //如何调用对象的 方法
+        
+
+    </script>
+</body>
+</html>

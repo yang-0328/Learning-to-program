@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 逻辑运算符有三个 -->
+
+    <!-- && 与 (且) : 两个都为真, 结果才是真 -->
+    <!-- || 或 :只有一个是真, 结果就是真 -->
+    <!-- ! 非: 对一个布尔值进行取反 -->
+
+    <script>
+        //连比的写法 
+        //2<3<4 js当中没有这种写法
+        //如何判断3 在不在2和5之间
+        console.log(3  > 2 && 3 < 5); //true&&true ===>true
+
+        //年龄 在不在 18 到 65 之间 
+        //prompt 录入信息 全是字符串
+        //var age = Number (prompt("请输入年龄"));
+        // console.log(age > 18 && age < 65);
+
+
+        //重点 短路运算
+        // 2) js 中的 && 属于短路的与 , 如果第一个值为 false, 则不会看第二个值 举例:
+
+        //第一个值为true ,会检查第二个值
+        true && alert('看我出不出来!!'); //可以弹出 alert 框
+
+        //第一个值为false 不会检查第二个值
+        false && alert ('看我出不出来!!');//不回弹出 alert 框
+
+
+        //3) js 中 的|| 属于短路的或  如果第一个值为 true ,则不会看懂第二个值,举例
+
+
+        // (4) 如果 对布尔值 进行逻辑运算 则会先将其转换为布尔值,然后 在操作,举例
+
+
+        var a = 10;
+        a = !a;
+
+        console.log(a); //false
+        console.log(typeof a); //boolean
+        //上面的例子 我们可以看到 对布尔值进行!操作之后 返回结果为布尔值
+
+
+        //非布尔值的与或运算{重要}
+
+        //非布尔值进行或运算时 ,会将其转换为布尔值, 然后在运算 但返回的结果是原值(决定整个表达式结果的那个原值)
+
+        var result = 5 && 6;//运算过程:true && true;
+        console.log(result);//6为什么是六
+
+        //与运算的返回结果 ( 以两个非布尔值的运算为例)
+        //如果第一个值为 true ,则 必然返回第二个值( 如果所有值都为 true 则返回的是最后一个值)
+        //如果第一个值为 false 则直接返回第一个值
+
+        // 或运算的返回结果:
+        //如果第一个值为 true 返回的第一个值
+        //如果 第一个值 为 false 返回第二个值
+        
+    </script>
+</body>
+</html>

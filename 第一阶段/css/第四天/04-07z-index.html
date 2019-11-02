@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .w1{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* 只有定位元素才能设置这个属性 */
+            /* 修改定位元素层级 */
+            /* 数字越大 层级越高 */
+            /* 不管层级设置的多高 也都受限欲父类元素 */
+            z-index: 2;
+        }
+        .w2{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            z-index: 1;
+
+        }
+        .w3{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            z-index: 999;
+        }
+        .w1 .inner{
+            position: absolute;
+            left: 0;
+            top: 0;
+            widows: 190px;
+            height: 190px;
+            background-color: pink;
+            z-index: 9999;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="w1">
+        <div class="inner">
+
+        </div>
+    </div>
+    <div class="w2">
+
+    </div>
+    <div class="w3">
+
+    </div>
+</body>
+</html>

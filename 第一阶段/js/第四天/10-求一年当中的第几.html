@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getNumDay(dateStr){
+            var date  = new Date (dateStr);
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var monthArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var totalDay = 0;
+        for (var i= 0; i < month; i++){
+            totalDay = totalDay + monthArr[i];
+        }
+        totalDay = totalDay + day;
+  // 判断闰年 
+            // 四年一闰百年不润 或者   四百年再闰
+        if(year % 4 ===0 && year % 100 !==0 || year % 400 ===0){
+           
+            if(month >= 2){
+                 // 超过二月分了
+                totalDay++;
+
+            }
+        }
+        return totalDay;
+    }
+    var count = getNumDay('2000-7-1');
+    console.log(count);
+    </script>
+</body>
+</html>

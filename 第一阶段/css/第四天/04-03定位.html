@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            /* 相对定位 */
+            /* 相对元素本身的位置定位 */
+
+            /* 不会脱离文档流 任然占据位置 */
+            /* 元素特性不变 不写宽度的话,依然继承 父类元素宽度 100%*/
+            /* 相对定位会使元素的层级提高 使得可以覆盖文本流中的元素 */
+            left: 50px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+        .box2{
+            width: 600px;
+            height: 500px;
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

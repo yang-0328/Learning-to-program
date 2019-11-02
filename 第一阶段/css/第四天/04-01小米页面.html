@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0 ;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .banner{
+            position: relative;
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+        }
+       .banner .side {
+            width: 234px;
+            height: 420px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px 0;
+           background: rgba(105,101,101,.6);
+        }
+        .banner .side-itme{
+            position: relative;
+            width: 200px;
+            height: 42px;
+            line-height: 42px;
+            padding-left: 34px;
+            color: #fff;
+            font-size: 14px;
+            cursor:pointer;
+
+        }
+        .banner .side-itme:hover{
+            background-color: #ff7600;
+        }
+        .side .icon{
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: 20px;
+            top: 13px;
+            background: url('img/arrow.png')no-repeat center;
+        }
+        .banner .arr{
+            position: absolute;
+            width: 42px;
+            height: 70px;
+        }   
+        .banner .arr.arr-right {
+            right: 0;
+            /* 父元素的50% */
+            top: 50%;
+            /* 再 向上移动自身高度的 一半 */
+            margin-top: -35px;
+            background: url('img/arr.png') no-repeat right;
+
+        }
+
+
+         
+        .banner .arr.arr-left {
+            left: 234px;
+            top: 50%;
+            margin-top: -35px;
+            background: url('img/arr.png') no-repeat -84px 0;
+
+        }
+        
+    
+     
+        .banner .arr.arr-right:hover{
+            background-position: -42px 0;
+
+        }
+        .banner .arr.arr-left:hover{
+            background-position: 0 0;
+        }
+        .banner .dots{
+            position: absolute;
+            right: 25px;
+            bottom: 50px;
+            
+        }
+        .banner .dot-item {
+            float: left;
+            width: 6px;
+            height: 6px;
+            margin: 0 4px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: rgba(0, 0, 0, .4);
+            cursor: pointer;
+        }
+
+        .banner .dot-item:hover {
+            border-color: rgba(0, 0, 0, .4);
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="img/banner.jpg" alt="">
+        <ul class="side">
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+            <li class="side-itme">
+                手机卡 电话卡
+                <span class="icon"></span>
+
+            </li>
+        </ul>
+        <a href="#" class="arr arr-left"></a>
+        <a href="#" class="arr arr-right"></a>
+        <ul class="dots">
+            <li class="dot-item"></li>
+            <li class="dot-item"></li>
+            <li class="dot-item"></li>
+            <li class="dot-item"></li>
+
+            <li class="dot-item"></li>
+
+        </ul>
+    </div>
+</body>
+</html>

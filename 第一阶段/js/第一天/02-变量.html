@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字面量 即常量  是固定值  不可改变  看见什么 他就是什么
+
+        //简单的字面量有 两种  数字 字符串,
+        console.log("你好");
+        //console.log("你好");//这代码是不对的
+        console.log(9999 + 99999);
+        //我想使用  上一个结果  取除以999
+        console.log((999+99999) / 999);
+        //提示: 100 是数字  100 是字符串,
+
+
+        // 我们 可以吧 频繁使用的东西 用一个变量来代表
+        //变量更加方便我们使用 所以在开发中都是通过变量去保存一个字面量  而不是直接使用字面量,
+        //变量可以理解为 储存数据的容器
+
+        var a = 999;
+        //声明(定义变量)  是有规则的
+
+
+        //var 关键字 专门来声明变量的
+        //text 就是你声明的变量名 和var 之间必须有空格隔开,
+        // = 赋值操作  把=  号右边的值  赋值给左边的变量名,
+        //; 每句代码结束  必须以分号结尾
+        //推荐,声明 变量的同时,就给他附一个  初始值
+
+        var text = "你好,不凡学院";
+        //还可以这样声明变量
+        var b; //声明了变量 b
+        b = 20;//把 20 赋给变量b
+
+
+        console.log(text);
+        //var  hello
+        //为什么不能这样使用 
+        //不加引号  hello 就会当做变量来解析
+
+        console.log(hello); //hello is not defined 没有这个变量
+        console.log(b); //20
+        //变量 必须 先声明 后使用
+
+    </script>
+</body>
+</html>

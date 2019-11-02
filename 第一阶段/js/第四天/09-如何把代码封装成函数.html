@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add (x, y){
+            return x + y
+
+        }
+        var a = add(2, 3);
+        var b = add(23, 32);
+        console.log(a);
+        console.log(b);
+
+        var arr1 = [21, 3, 45, 34, 343, 54, 4343, 4342,]
+        var arr = [21, 232, 4, 45, 32,]
+      function bubbleSort(arr){
+          for (var j= 1; j < arr.length; j++){
+           for (var i = 0 ; i < arr.length - j; i++){
+            if(arr[i] > arr[i + 1]){
+                var temp = arr[i];
+                arr[i] = arr [i + 1];
+                arr[i + 1] = temp;
+
+            }
+        }  
+        }
+        
+      }  
+        bubbleSort(arr);
+        console.log(arr);
+        bubbleSort(arr1);
+        console.log(arr1);
+    </script>
+</body>
+</html>

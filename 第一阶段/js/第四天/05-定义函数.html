@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body><script>
+    // 方法一 使用函数声明  来创建一个函数,
+    // 语法:
+    // function 函数名 ([形参1,形参2, ...]);{中括号表示可以选
+    //     语句
+    // }
+
+    function sum(a,b){
+        return a+b;
+
+    }
+//解释如下：
+// function：是一个关键字。中文是“函数”、“功能”。
+// 函数名字：命名规定和变量的命名规定一样。只能是字母、数字、下划线、美元符号，不能以数字开头。
+// 参数：可选。
+// 大括号里面，是这个函数的语句。
+
+
+
+// 方法二  使用函数表达式 来创建一个函数;
+    // 语法
+    // var 函数名 = function([形参1,形参2 ...]);{
+    //     语句...
+    // }
+
+
+    var fun3 = function(){
+        console.log('我是一个匿名封装代码');
+    }
+
+//     从方式二的举例中可以看出：所谓的“函数表达式”，
+//     其实就是将匿名函数赋值给一个变量。
+// 当然，我们还有方式三：使用构造函数来创建一个对象。这种方式，用的少。
+
+// 函数的调用
+
+//举例 求任意两个数的和;
+function add(x , y){
+    console.log(x + y);
+}
+add (3,5); //当调用的时候 是不是要告诉这个函数 求 那两个数的和;
+add(23,34);
+
+
+//匿名函数表达式调用
+
+var sum = function(x , y){
+    console.log(x + y);
+}
+sum(23,23);
+
+
+ // 调用
+        // say();
+        // 函数如何调用?
+        // 函数名();
+        // 写在函数里边的代码  不调用  是不会执行的 
+        // say  和  say()
+</script>
+   
+</body>
+</html>

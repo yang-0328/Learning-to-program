@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = {
+            //属性名: 属性值
+            name: '张三',
+            tel: '12346543',
+            sex: '男',
+            avater: 'img/po.png',
+            text:'备注信息',
+            say: function(){
+                alert('你好');
+
+            }
+        }    
+
+        // for in 专门用来遍历对象的属性
+
+        for (var key in user){
+            //key 就是这个对象的 属性名
+            console.log(key);
+            //当你使用 user.key ,这个会被当做字符串来解析
+            //user[key] 这个会被 当做变量来解析
+            // 总结 如果属性名 是动态变化的()变量 ,获取属性 就应该使用user[key]中括号的形式;
+            console.log(user[key]);
+        }
+    </script>
+</body>
+</html>

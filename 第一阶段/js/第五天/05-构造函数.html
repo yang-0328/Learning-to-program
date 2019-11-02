@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 首字母大写 专门来 造对象的 面向对象变成的思想
+        
+        //自定义构造函数
+
+        function Person(n, a, s){
+            // 姓名 年龄 性别
+            //班级
+
+            this.name = n;
+            this.name = a;
+            this.name = s;
+            this.name = '703西';
+
+        }
+        var user1 = new Person('张三','25','男');
+        var user2 = new Person('王五','25','男');
+        console.log(user2);
+        console.log(user1);
+
+
+
+        //先将 this 是什么
+        var name = '小明';
+        var user = {
+            name: '李四',
+            age: 27,
+            say:function(){
+                alert(this.name);
+            },
+        };
+
+        //面试常考 this 的指向问题
+        //this 被调用时  指向才能被确定
+        //this 时一个指针,执行调用者(. 前面的那个对象)
+        user.say(); // alert(this.name);=> this.name ,===>this 指向user ,,user.name
+        var foo = user.say;
+
+        foo(); // window.foo() // alert(this.name); 要确定this的指向 ,this指向 window, window.name
+        console.log(window);
+
+        var user3 = new Person('小红', 17,'女');
+            // 1.  要执行 Person 里边的代码
+			// 2. 先在里边创建一个  空对象 {}
+			// 3. 将 this 指向   这个{}
+			// 4. 执行代码
+			// {
+			//     name: '小红',
+			//     age: 18,
+			//     sex: '女',
+			//     room:'703西'
+			// }
+			// 5. return 这个对象 返回值
+
+			// 总结  this的指向
+			// 1. this 指向调用者
+			// 2. 对于 构造函数 而言 ,,this指向new 出来的 实例对象
+        console.log(user3)
+    </script>
+</body>
+</html>

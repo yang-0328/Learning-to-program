@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 100;
+        function add(x, y);{
+            //局部作用域 函数作用域;
+            var sum = x + y;
+
+        }
+          // 直接编写在 script 标签中的 JS 代码，都在全局作用域。
+
+        // 在全局作用域下
+        // 创建的变量都会作为 window 对象的属性保存。
+
+        // 创建的函数都会作为 window 对象的方法保存。
+
+        // 全局作用域中的变量都是全局变量，在页面的任意的部分都可以访问的到。
+        console.log (window);
+        // window.a;
+        // window.add;
+          // 函数作用域
+        // 在函数体内部的 声明的变量  局部变量
+        // 如果一个变量在函数体内部声明，则该变量的作用域为整个函数体，在函数体外不可引用该变量。
+
+        // 举例
+        var y = 10; // 全局变量
+        function foo() {
+            var x = 1; //局部变量
+            x = x + 1;
+            console.log(y); // 10
+        }
+        foo();
+        // console.log(x); // 报错  x is not defined 没有这个变量
+        // 也就是说,函数体内部声明的,在函数体外部是不能使用的。
+        // 在全局作用域下声明的全局变量，可以在页面任意部分访问得到。
+
+
+        // 作用域上下级关系
+
+        function say() {
+            var x = 1;
+
+            function bar() {
+                var y = x + 1; // bar可以访问foo的变量x!
+                var z = 100;
+            }
+            var z = y + 1; // ReferenceError! say不可以访问bar的变量y!
+            console.log(z);
+
+            function ins() {
+                x++; // ins 可以访问foo的变量x
+                y++; // 不可以访问 bar的变量y
+                var z = 1000;
+            }
+
+            bar();
+            ins();
+            // 注意 bar 和 ins 中声明的 变量z 是相互独立的,互不影响
+        }
+        say();
+
+        // 总结一下  变量的查找规则
+        // 先在自身作用域下 查找,如果找不到,就到自己的上一级作用域查找. 
+        // 如果找到全局作用域,依然没有,就报错
+        // 还有就近原则
+        // 不会到兄弟作用域和 后代作用域 查找
+    </script>
+</body>
+</html>

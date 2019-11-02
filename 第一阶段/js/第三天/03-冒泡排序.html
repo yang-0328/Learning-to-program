@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [34, 45, 53, 3 ,23, 56 ];
+        // var sum = 0;
+        // for (var i= 0; i < arr.length; i++){
+        //     if(arr[sum]>arr[i]){
+        //         sum = i;
+        //     }
+        // }
+        // if (sum !==0){
+        //     var temp = arr[0];
+        //     arr[0] = arr[sum];
+        //     arr[sum]= temp;
+        // }
+        // console.log(arr);
+        for ( var j = 0; j < arr.length - 1; j++){
+            var minindex = j ;
+            for (var i = j + 1 ; i < arr.length; i++){
+              if(arr[minindex] > arr[i]){
+                  minindex= i
+              }  
+            }
+            if(minindex !== j){
+                var temp = arr[j];
+                arr[j] = arr[minindex];
+                arr[minindex]= temp;
+            }
+            console.log(arr);
+        } 
+    </script>
+</body>
+</html>

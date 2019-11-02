@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Math 对象 内置对象
+        //封装了 数学 当中的一些常用方法
+        //对象有属性和方法(动态)
+        console.log(Math);
+        //求绝对值
+        console.log(Math.abs(-5));
+        //向下取整  地板函数  小
+        console.log(Math.floor(2.5));//2
+        console.log(Math.floor(-2.5))//-3
+        //向上取整  天花板函数 大,
+        console.log(Math.ceil(2.1)); //3
+        console.log(Math.ceil(-2.1)); //-2
+
+        //四色五入
+        console.log(Math.round(2.1)); //2
+        console.log(Math.round(2.5)); //3
+        //注意
+        //浮点数 存在 精度问题
+        console.log(Math.round(2.4999999999999999999999999999999999)); //3
+        //正数  四合五入
+
+
+        //负数  四舍五入
+        console.log(Math.round(-2.4)); //-2
+        console.log(Math.round(-2.5)); //-2
+        console.log(Math.round(-2.9)); //-3
+
+
+        //求最大值 和 最小值
+
+        console.log(Math.max(2, 5, 7)); //7
+        var min = Math.min(2, 5, 7);  //2
+        console.log(min);
+
+        //幂运算
+        console.log(2 * 2 * 2 ); //8
+        console.log(Math.pow(2, 10)); //1024
+
+        //开方运算
+
+        console.log(Math.sqrt(4)); //2
+        console.log(Math.sqrt(8));
+
+
+        //随机数(0 1 )
+        console.log(Math.random());
+        //随机出[0,99]范围内的 所有整数
+        //Math.random()*100 [0,100)
+        console.log(Math.floor(Math.random() * 100));
+
+        //随机出[5,10]范围内的所有整数
+        //[0,5]+5
+        //Math.random()*6
+
+
+        console.log(Math.floor(Math.random() * 6) + 5);
+
+        //求任意范围的 随机数
+        //Math,floor(Math.random()* 个数)+min;
+    </script>
+</body>
+</html>
