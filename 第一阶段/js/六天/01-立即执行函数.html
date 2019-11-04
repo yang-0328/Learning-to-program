@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明函数
+
+        function add(x, y){
+            console.log(x + y);
+        }
+
+        var bar = function (){
+            alert('你好');
+        }
+
+        //这两个函数 需要调用才会执行
+
+        //立即执行函数 
+        //相当于在定义函数的同时,就让他执行一次
+        ;(function (){
+            console.log('我是一个立即执行函数');
+
+        })()
+    </script>
+</body>
+</html>

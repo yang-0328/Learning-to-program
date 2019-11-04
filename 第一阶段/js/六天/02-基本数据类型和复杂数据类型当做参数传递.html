@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //基本数据类型作为参数传递, 一切修改不会影响传进来的数据本身,
+        var num = 2;
+        function ins(x) {
+            x++;
+        }
+        //调用ins方法
+        ins(num);
+        console.log(num);
+
+        //复杂数据类型作为参数传递, 在函数内部对参数的修改 会直接影响到函数外部的该参数
+        function add(array, n) {
+            array.push(n);
+
+        }
+        //赋值操作时,会把栈内存保存的东西进行赋值(基本数据和 引用地址)
+        var arr1 = [2, 3];
+        add(arr1, 4);
+        console.log(arr1);//[2, 3, 4]
+                // 栈内存 和 堆内存
+
+        // 基本数据类型的值，直接保存在栈内存中。值与值之间是独立存在，修改一个变量不会影响其他的变量。
+
+
+        // 引用数据类型： 
+        // 对象是保存到堆内存中的。每创建一个新的对象，就会在堆内存中开辟出一个新的空间，而变量保存了对象的内存地址（对象的引用）。
+        // 如果两个变量保存了同一个对象的引用，当一个通过一个变量修改属性时，另一个也会受到影响。
+    </script>
+</body>
+</html>

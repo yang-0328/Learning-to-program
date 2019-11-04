@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 如何把字符串的大小写取反  例如 abc 变成ABC
+
+    var str = 'hello world';
+    var strArr = str.split('');
+    console.log(strArr);
+
+    for (var i = 0; i < strArr.length; i++) {
+        var temp = strArr[i];
+        if (temp === temp.toUpperCase()) {
+            strArr[i] = temp.toLocaleLowerCase();
+
+        }else {
+            strArr[i] = temp.toUpperCase();
+        }
+
+    }
+    console.log(strArr);
+    var newStr = strArr.join('');
+    console.log(newStr);
+</script>
+</body>
+</html>

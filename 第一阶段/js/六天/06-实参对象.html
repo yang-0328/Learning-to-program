@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arguments 对象
+        //  包含了   实际参数的  信息
+        // arguments.length  实参的个数
+        // arguments.calle   函数本身    
+        function add(x, y) {
+            console.log(arguments);
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments.callee);//指向当前执行的函数
+            console.log(arguments.lenght);//指向传递给当前函数的参数数量
+
+
+        }
+        add(3, 5);// [3, 5, callee: ƒ, Symbol(Symbol.iterator): ƒ]  伪数组(类数组)
+
+        //递归
+        function jc(n) {
+            if (n == 1) {
+                return 1;
+
+            }
+            return arguments.callee(n - 1) * n;
+
+        }
+        console.log(jc(5));
+
+    </script>
+</body>
+</html>

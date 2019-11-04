@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = {
+            nsme: '张三',
+            ade:24
+        }
+        //json 对象的 属性名 加引号
+        // 本质 是一个字符串
+        //网络间进行传输 只能是 字符串
+        //json 网络间传输数据的格式
+        //var userjson = "{'name': '张三', 'age':'24'}"
+
+        //把user 这个对象 穿给后台 需要把这个对象 转化为json 字符串, 再去传输
+        // json.stringfy() 这个可以把普通对象 转化成 json 字符串
+        var userjson = JSON.stringify(user); 
+        console.log(userjson);
+
+        //前端向后台发送请求 索要数据,需要过来的数据 是 json 字符串
+        var xiaoming = '{"name":"小明","age":24}';
+        //怎么从这里边 把 小明 和他的 年龄获取出来
+        //json 字符串 变回对象 json.parse()
+        //强调一点 只有json 字符串 才可以 变回 对象"{name:'小红'}""不可以"
+
+        var mingObj = JSON.parse(xiaoming);
+        console.log(mingObj);
+    </script>
+</body>
+</html>

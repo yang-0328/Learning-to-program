@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 5 请把俩个数组[A1, A2, B1, B2, C1, C2, D1, D2] 和[A, B, C, D]，
+        // 合并为[A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]。
+
+        var arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
+        var arr2 = ['A', 'B', 'C', 'D'];
+
+        // var newArr = arr1.concat(arr2);
+        // newArr.sort();
+        // console.log(newArr)
+
+        //方法二
+        var result = [];
+        var j = 0;
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i].indexOf('2') !== -1) {
+                result.push(arr1[i]);
+                result.push(arr2[j]);
+                j++;
+            }else {
+                result.push(arr1[i]);
+
+            }
+        }
+        console.log(result);
+    </script>
+</body>
+</html>

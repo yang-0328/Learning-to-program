@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 不死神兔 
+        // 假设一对刚出生的小兔一个月后就能长成大兔，再过一个月就能生下一对小兔，
+        // 并且此后每个月都生一对小兔，一年内没有发生死亡，问：一对刚出生的兔子，一年内繁殖成多少对兔子?
+
+        // n个月的数量 === n-1个月 兔子数量(上个月的数量)+ n-2个月兔子数量(新增) 
+
+        // 1   1   2   3   5   8   13   21  34   55  89   144    
+        function foo(n) {
+            if (n ===1 || n === 2){
+                return 1;
+            } 
+            return foo(n - 1) + foo(n - 2);
+        }
+        console.log(foo(13));
+    </script>
+</body>
+</html>

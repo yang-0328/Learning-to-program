@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 3 找到数组中每个字母出现的次数["c", "a", "z", "a", "a"]
+        // {
+        //     a: 3,
+        //     z: 1,
+        //     c: 1
+        // }      
+        var wordArr = ['c', 'a', 'z', 'a', 'a'];
+        var result = {};
+        for (var i = 0; i < wordArr.length; i++) {
+            var temp = wordArr[i];
+            //result[temp] 获取result对象的 属性
+            //判断正在遍历的temp 属性 存不存在
+            if (result[temp]) {
+                result[temp] = result[temp] +1;
+            }else {
+                result[temp] = 1;
+            }
+            //往对象里加属性或者修改属性
+        }
+        console.log(result);
+
+    </script>
+</body>
+</html>
