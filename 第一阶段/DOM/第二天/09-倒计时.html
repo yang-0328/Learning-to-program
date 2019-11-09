@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         h1 {
+            width: 250px;
+            margin: 100px auto 50px auto;
+        }
+
+        .item {
+            width: 500px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 30px;
+            color: orange;
+        }
+
+        strong {
+            background-color: orange;
+            padding: 0 10px;
+            color: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+        <h1>距离光棍节,还有</h1>
+        <div class="item">
+            <span><span class="day">00</span>天</span>
+            <strong><span class="hour">00</span>时</strong>
+            <strong><span class="min">00</span>分</strong>
+            <strong><span class="second">00</span>秒</strong>
+        </div>
+
+        <script>
+          var dayEl = document.querySelector('.day');
+          var hourEl = document.querySelector('.hour');
+          var minEl = document.querySelector('.min');
+          var secondEl = document.querySelector('.second');
+
+          var endTime = new Date('2019-11-11 00:00:00');
+
+          setInterval(function () {
+            var nowTime = new Date();
+
+
+              //相差时间的毫秒数
+              var stamp = endTime - nowTime;
+              // console.log(stamp)
+              // 毫秒数转换成 天  时  分  秒
+              var day_ms = 24 * 60 * 60 * 1000;
+            var hour_ms = 60 * 60 * 1000;
+            var min_ms = 60 * 1000;
+
+              var day = Math.floor(stamp / day_ms);
+            var hour = Math.floor(stamp % day_ms / hour_ms);
+            var min = Math.floor(stamp % hour_ms / min_ms);
+            var second = Math.floor(stamp % min_ms / 1000);
+              //console.log(day, hour, min, second);
+              dayEl.innerText = wrap(day);
+            hourEl.innerText = wrap(hour);
+            minEl.innerText = wrap(min);
+            secondEl.innerText = wrap(second);
+          }, 1000)
+
+          function wrap(num) {
+            return num < 10 ? '0' + num : num;
+        }
+             
+        </script>
+</body>
+</html>

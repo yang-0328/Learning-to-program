@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item" data-color="yellow"></li>
+        <li class="nav-item" data-color="orange"></li>
+        <li class="nav-item" data-color="red"></li>
+        <li class="nav-item" data-color="blue"></li>
+        <li class="nav-item" data-color="pink"></li>
+        <li class="nav-item" data-color="black"></li>
+        <li class="nav-item" data-color="green"></li>
+        <li class="nav-item" data-color="skyblue"></li>
+        
+    </ul>
+    <script>
+        var lis = document.querySelectorAll('.nav-item');
+        for (var i = 0; i < lis.length; i++) {
+            var temp = lis[i].dataset['color'];
+            lis[i].style.backgroundColor = temp;
+        }
+    </script>
+</body>
+</html>

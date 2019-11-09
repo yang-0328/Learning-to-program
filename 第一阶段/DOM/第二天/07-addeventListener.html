@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="box">
+                不凡学院
+            </div>
+            <button>触发box的点击事件</button>
+            <button>取消box的点击事件</button>
+            <div class="w">
+                w
+                <div class="w1">
+                    w1
+                    <div class="w2">
+                        w2
+                        <div class="w3">
+                            w3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button>移除w3的点击事件</button>
+    <script>
+        var box = document.querySelector('.box');
+        var btnArr = document.querySelectorAll('button');
+        box.onclick = function () {
+            alert('你好');
+        }
+        //这样添加的点击事件 只有一个 会覆盖之前
+        box.onclick = function () {
+            alert('不凡');
+        }
+        btnArr[0].onclick = function () {
+            // 触发box的点击事件
+            box.onclick();
+        }
+        btnArr[1].onclick = function () {
+            //取消box的点击事件
+            box.onclick = null;
+        }
+
+
+         // addEventListener 使用
+        // 语法： target.addEventListener(type, listener, useCapture]);
+        // target: 文档节点, document, window 或者XMLHttpRequre (事件源);
+        // type: 字符串 事件名称 不含 on  比如 click  mouseover  keydown 等
+        // listener 实现 EventListener 接口或者是 JavaScript 中的函数
+        // useCapture 是否使用捕获  一般用 false , true 代表捕获, false 代表冒泡
+
+
+        var w3 = document.querySelector('.w3');
+        var w2 = document.querySelector('.w2');
+        var w1 = document.querySelector('.w1');
+        var w = document.querySelector('.w');
+
+        w3.addEventListener('click', foo, true);
+        //可以注册多个 不会覆盖
+        //w3.addEventListener('click', functon () {
+            // alert('w4');
+        //})
+
+        w2.addEventListener('click', function () {
+            alert('w2');
+
+        },false);
+        w1.addEventListener('click', function () {
+            alert('w1');
+            
+        }, true);
+        w.addEventListener('click', function () {
+            alert('w');
+        }, true);
+          // 冒泡  从里到外触发
+
+        // 捕获  从外到里触发
+
+        // 先捕获后冒泡
+
+
+        // removeEventListener 移除绑定
+        // 如果同一个监听事件分别为“ 事件捕获” 和“ 事件冒泡” 注册了一次， 一共两次， 这两次事件需要分别移
+        // 除。 两者不会互相干扰。
+        // 移除的事件必须为外部事件（ 外部封装的函数）。
+        // 总结来讲， 就是移除时， 必须和绑定时一一对应。
+
+        btnArr[2].onclick = function () {
+            // 移除eventlistener
+            w3.removeEventListener('click', foo, true)
+        }
+
+        function foo() {
+            alert('w3');
+        }      
+    </script>
+</body>
+</html>

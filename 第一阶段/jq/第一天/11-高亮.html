@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            width: 630px;
+            height: 392px;
+            padding: 0 0 10px 10px;
+            border: 1px solid #fff;
+            margin: 100px auto;
+        }
+
+        .box .item {
+            float: left;
+            width: 200px;
+            height: 186px;
+            margin: 10px 10px 0 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.4;
+        }
+
+        .box .item.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+        <ul class="box">
+                <li class="item active" style="background-image:url(images/01.jpg)"></li>
+                <li class="item" style="background-image:url('images/02.jpg')"></li>
+                <li class="item" style="background-image:url('images/03.jpg')"></li>
+                <li class="item" style="background-image:url('images/04.jpg')"></li>
+                <li class="item" style="background-image:url('images/05.jpg')"></li>
+                <li class="item" style="background-image:url('images/06.jpg')"></li>
+        
+            </ul>
+        
+            <script src="js/jquery-3.4.1.min.js"></script>
+
+            <script>
+            //   $('.item').mouseenter(function () {
+            //       $(this).siblings().removeClass('active');
+            //       $(this).addClass('active');
+            //   }) 
+
+
+
+   // 原生js
+        // var lis = document.querySelectorAll('.item');
+        // for (var i = 0; i < lis.length; i++) {
+
+        //     lis[i].onmouseenter = function () {
+        //         for (var j = 0; j < lis.length; j++) {
+        //             lis[j].classList.remove('active');
+        //         }
+        //         this.classList.add('active');
+        //     }
+        // }
+
+
+
+
+
+
+
+// 补充一个知识点 
+        // this的指向 
+        // 回调函数中慎用this  ,因为this指向会变化
+        //  但是在  jq方法中的回调函数 ,已经强行将 this的指向   做了修改 ,让他指向事件源 
+
+        // var age = 24;
+        // var user = {
+        //     age: 14,
+        //     say: function () {
+        //         console.log(this.age);
+        //     }
+        // }
+        // setTimeout(user.say, 2000);
+
+
+        // jq写法
+        // 隐式迭代的特性 ,,$('.item').click();  
+        //这样去绑定事件时, jq 会自动给匹配到的所有元素循环绑上这个事件
+            $('.item').mouseenter(function () {
+            // 我想获取 进入的 这个 li  对应的下标
+            // .index()  这个方法  可以获取下标
+
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+            })
+            </script>
+</body>
+</html>

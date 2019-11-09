@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+    a[title] {
+            color: beige;
+        }
+        a[href] {
+            color: red;
+        }
+        a[title='百度'] {
+            color: pink;
+        }
+       .box {
+           width: 100px;
+           height: 100px;
+       }
+     
+    </style>
+</head>
+<body>
+    <a title="百度"href="www.baidu.com" class="a1">百度</a>
+    <a title="新浪"href="www.baidu.com" class="a1">新浪</a>
+    <a title="搜狐"class="a1">搜狐</a>
+    <ul>
+        <li class="li_1">1</li>
+        <li class="li_2">2</li>
+        <li class="li_3">3</li>
+        <li class="li_4">4</li>
+        <li class="li_5">5</li>
+        <li class="li_6">6</li>
+        <li class="li_7">7</li>
+        <li class="li_8">8</li>
+        <li class="li_9">9</li>
+        <li class="li_10">10</li>
+    </ul>
+    <div class="box">
+        不凡学院
+    </div>
+    <div class="box"></div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        //jq 获取事件源的方式
+        //语法: $('选择器')
+
+        // 选择器 和 css 中的选择器通用
+
+        //新增 css 选择器 属性选择器
+        //jq 的 筛选选择器
+
+        console.log($('li'));
+        var $li5 = $('li:eq(4)');
+        console.log($li5);
+        // 选择索引2后面的兄弟,不包过本身
+        console.log($('li:gt(2)'));
+        //选择索引2前面的兄弟,不包过本身
+        console.log($('li:lt(2)'));
+        $('li:odd').css('color','red'); //索引值 为奇数
+        $('li:even').css('color','orange');//索引值为 偶数
+        $('li:first').css('font-size','36px');//索引第一个
+        $('li:last').css('font-size','36px');//索引最后一个
+        //换行符也是文本 索引没有文本的对象
+        $('.box:empty').css('background-color', 'red');
+        // 匹配包含给定文本的元素
+        $('.box:contains("不")').css('color', 'red');
+        
+    </script>
+</body>
+</html>

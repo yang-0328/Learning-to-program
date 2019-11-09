@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var box = document.querySelector('.box');//原生dom对象
+        // 原生dom对象 不具备 jq的方法
+        var $box = $('.box'); //jq 对象
+        // jq 对象 不具备 原生dom对象的属性和方法
+
+
+        //jq 对象转换成 原生 dom对象 $box[0]
+        console.log(box === $box[0]);
+        //$box[0]
+        
+        console.log($box.get(0));
+        // $box.get(0)
+
+        //原生dom对象 转换成jq 对象 $(原生dom)
+        console.log($(box));
+        console.log($box);
+    </script>
+</body>
+</html>

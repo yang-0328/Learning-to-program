@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div title="不凡"class="box">
+        不凡学院
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // obj.src
+        // set/get/removeAttribute
+
+        // jq 操作属性 .attr(属性名);
+        console.log($('.box').attr('title'));
+
+        //设置属性
+        // 修改: title属性
+        $('.box').attr('title', '百度');
+        console.log($('.box').attr('title'));
+
+        //同时修改多个属性
+        $('.box').attr({
+            id: 'd1',
+            class: 'inner'
+        })
+        
+        //删除属性
+        $('.inner').removeAttr('title');
+    </script>
+</body>
+</html>

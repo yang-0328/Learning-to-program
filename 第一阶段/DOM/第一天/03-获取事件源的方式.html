@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1" class="box">
+        不凡学院1
+    </div>
+    <div id="d2" class="box">
+        不凡学院2
+    </div>
+
+    <script>
+        //方式一  通过id  获取
+        var box1 = document.getElementById('d1');
+        console.log(box1);
+        //如果想查看 dom 对象的属性和方法 
+        console.dir(box1);
+
+
+        //方法2 通过标签名 
+        var box2 = document.getElementsByTagName('div');
+        console.log(box2);
+        console.log(box2[0]);//dom对象
+        console.log(box2[1]);//dom对象
+
+
+        //方法3 class 名
+
+        var box3 = document.getElementsByClassName('box');// 伪数组(类数组)  具备下标 长度属性,能够使用for循环 遍历,但是不具备数组的方法
+        console.log(box3);
+        console.log(box3[0]);//dom对象
+        console.log(box3[1]);//dom对象
+
+        box3[1].onclick = function () {
+            alert('你好');
+        }
+    </script>
+</body>
+</html>

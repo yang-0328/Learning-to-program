@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="inner-box">
+            内部盒子
+        </div>
+    </div>
+    <p>不凡学院</p>
+    <div class="inner-box">
+        外部盒子的 inner
+    </div>
+    <ul class="nav">
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+    </ul>
+
+    <script>
+        //参数 是 css 选择器
+        var innerBox = document.querySelector('.box .inner-box');
+        console.log(innerBox);
+        var innerWbox = document.querySelector('body>.inner-box');
+        console.log(innerWbox);
+
+        // 获取多个
+        var lis = document.querySelectorAll('.nav-item');
+        console.log(lis);
+    </script>
+</body>
+</html>

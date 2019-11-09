@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+        ul{
+            list-style: none;
+            width: 400px;
+            height: 300px;
+            background-color: green;
+
+        }
+        li {
+            width: 200px;
+            height: 200px;
+        background-color: red;
+        }
+        a {
+            display: block;
+            width: 100px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+   <ul>
+       <li><a href="#">首页</a></li>
+   </ul>
+
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script>
+    //    $('ul').mouseenter(function () {
+    //        console.log('ul');
+    //        //进入ul时  触发一次
+    //    })
+
+    $('ul').mouseover(function () {
+        console.log('ul');
+        //进入ul 的内部盒子时会触发 出来时也会触发
+        // 触发多次
+    });
+   </script>
+</body>
+</html>

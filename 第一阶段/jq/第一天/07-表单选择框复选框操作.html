@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input:checked+button {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    篮球:<input type="checkbox">
+    <button>获取复选框状态</button>
+    <button>设置复选框状态</button>
+
+    <select name="" id="s1">
+    <option value="0">足球</option>
+    <option value="1">乒乓球</option>
+        
+    </select>
+    <button>获取下拉框状态</button>
+    <button>设置下拉框状态</button>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    
+        // .prop() 获取设置 选择框 状态
+        $('button')[0].onclick = function () {
+            //获取选择框状态
+            console.log($('input').prop('checked'));
+            $('input').prop('checked',true);
+        }
+        $('button')[1].onclick = function () {
+            $('input').prop('checked',true);
+        }
+        $('button')[2].onclick = function () {
+        console.log($('option:eq(0)').prop('selected'));
+        }
+        $('button')[3].onclick = function () {
+            $('option:eq(1)').prop('selected', true);
+        }
+    </script>
+</body>
+</html>

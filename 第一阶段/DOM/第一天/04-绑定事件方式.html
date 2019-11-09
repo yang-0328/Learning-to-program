@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+
+    <!-- 行内绑定 -->
+    <div onclick="fn()" class="box2">
+        不凡学院2
+    </div>
+
+    <script>
+    
+        var boxEl = document.getElementsByClassName('box')[0];
+        boxEl.onclick = function () {
+            alert('你好');
+        }
+
+    //行内绑定
+    //当鼠标点击时  就触发 fu函数
+    function fn() {
+        alert('绑定了');
+    }
+    </script>
+</body>
+</html>

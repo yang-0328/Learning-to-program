@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <button>添加danger</button>
+    <button>删除danger</button>
+    <button>判断danger</button>
+    <button>toggle</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    // .classList.add();
+    // .classList.remove();
+    // .classList.toggle();
+    // .classList.contains();
+    $('button:eq(0)').click(function () {
+        $('.box').addClass('danger');  //可以添加多个 用空格隔开
+    });
+    $('button:eq(1)').click(function () {
+            $('.box').removeClass('danger');
+        });
+    $('button:eq(2)').click(function () {
+        console.log($('.box').hasClass('danger'));
+    });
+    $('button:eq(3)').click(function () {
+        $('.box').toggleClass('danger')
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <body>
+                京东：<input type="text" name="jd" id="inp1" value="我是京东" /><br>
+                淘宝：<label for="inp2">我是淘宝</label><input type="text" name="tb" id="inp2" /><br>
+                placeholder：<input type="text" placeholder="我是placeholder"/>
+                
+                <script>
+                    //需求：京东的获取焦点
+//思路：京东的input按钮获取了插入条光标立刻删除内容。失去插入条光标显示文字
+//获取事件源和相关元素
+var inp1 = document.getElementById("inp1");
+//绑定事件
+inp1.onfocus =function(){
+
+//书写驱动程序
+if (this.value=="我是京东") {
+    this.value = "";
+}
+}
+inp1.onblur = function(){
+if (this.value==="") {
+    this.value = "我是京东";
+}
+}
+
+</script>
+</body>
+</html>

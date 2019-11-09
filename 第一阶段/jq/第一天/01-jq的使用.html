@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入外部链接 -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+
+    <script>
+        // windoow.onload = function () {
+
+        //}
+        //存在一个 时间覆盖问题
+        //入口函数
+        // 和window.onload 等价
+
+        // $(document).ready(function () {
+
+        //})
+        $(function () {
+            alert('你好');
+        });//推荐
+    </script>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div> 
+      <!-- <!-错误
+        $ is not defined-  --> 
+        <!-- 使用了 jquery, 但是没有引入 jq 源文件 -->
+        <!-- $就是 jquery 这两个变量等价 -->
+
+        <script>
+            // .min 生产环境使用 上线使用 压缩之后 体积小
+            //开发环境
+            // jq 是一个很完善的库  不需要去修改源码  平时直接就可以使用 min版本
+
+
+            //使用
+            //window.onload事件
+
+            //api 不明确的时候 查文档
+            // http://jquery.cuishifeng.cn/index.html
+
+            // iQuery之前 先引用jQuery 然后在去写我们的jQuery代码
+
+
+            //事件处理
+
+            // 获取事件源
+
+            var box = document.querySelector('.box');
+            console.log(box);
+            //绑定事件
+            // box.onclick = function () {
+            //     //事件处理程序
+            //     this.style.backgroundColor = 'red';
+            // }
+
+
+                // jq实现
+
+                //获取事件源
+                // $box 和原生dom 对象 box 又区别
+
+
+                //$box  称之为jq 对象, 对原生dom 对象进行了一次包装  就可以使用jquery的方法了
+                // $box[0] 就拿到了  原生dom没对象
+                // box 成为 原生dom 对象
+
+                var $box = $('.box');
+                console.log($box);
+                //绑定事件
+                $box.click(function () {
+                    //事件处理程序
+                    // $box.css('background-color','pink');
+                    $box.css({
+                        'background-color':'red',
+                        'width':'200px',
+                        'font-size':'24px'
+                    })
+                }) ;
+
+                // jquery 和 javascript的理解
+                //jquery 就是对 js 常用功能的封装
+
+                // jquery 能实现 的  js 都能实现
+                // js 能实现的 jq 不一定实现
+        </script>
+</body>
+</html>

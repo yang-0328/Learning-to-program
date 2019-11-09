@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            font-size:18px;
+        }
+
+    </style>
+    <script>
+        window.onload =function () {
+         var boxEl = document.getElementsByClassName('box')[0];
+        boxEl.onclick = function () {
+            //属性值 加引号
+            boxEl.style.color = 'white';
+            //font-size 在js中  用 驼峰命名 fontSize
+            boxEl.style.fontSize = '36px';
+
+
+            
+            // 通过 对象.style  设置的 样式属于 行内样式
+                // style="color: white; font-size: 36px;"
+        }
+
+     }
+       
+    
+    </script>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+</body>
+</html>

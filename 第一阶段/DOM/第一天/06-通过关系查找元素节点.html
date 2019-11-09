@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="inner-box">
+            不凡学院
+        </div>
+        
+    </div>
+    <ul class="nav">
+        <li class="nav-item">li1</li>
+        <li class="nav-item">li2</li>
+        <li class="li-3 nav-item">li3</li>
+        <li class="nav-item">li4</li>
+        <li class="nav-item">li5</li>
+    </ul>
+    <script>
+    
+        //父节点
+        var innerBox = document.getElementsByClassName('inner-box')[0];
+        var boxEl = innerBox.parentNode;
+        console.log(boxEl);
+
+
+        //兄弟节点
+        var li3 = document.getElementsByClassName('li-3')[0];
+        var next = li3.nextSibling;
+        console.log(next);
+        var nextEl = li3.nextElementSibling;
+        console.log(nextEl);
+
+         // 为了获取下一个元素节点， 我们可以这样做： 在 IE678 中用 nextSibling， 在火狐谷歌 IE9 + 以后
+        // 用 nextElementSibling， 于是， 综合这两个属性， 可以这样写：
+        var nextElement = li3.nextElementSibling || li3.nextSibling;
+
+
+        // 上一个兄弟 previousSibling  和 previousElementSibling：
+
+        //子节点
+        var ulEl = document.getElementsByClassName('nav')[0];
+        var first = ulEl.firstChild;
+        console.log(first);
+        var firstEl = ulEl.firstElementChild;
+        console.log(firstEl);
+
+        // 最后一个子节点    lastChild  和  lastElementChild
+
+        // 所有自己点
+
+        var child = ulEl.childNodes;//获取所有节点
+        console.log(child);
+
+        var children = ulEl.children;//获取指定节点
+        console.log(children);
+
+
+        //自己写一个方法 实现 获取元素的所有字节点
+        var childrenEl = myChildren(ulEl);
+        console.log(children);
+
+        function myChildren(el) {
+            var children = el.childNodes;
+            var result = [];
+            for (var i = 0; i < children.length; i++) {
+                //判断所有 是 元素节点 还是注释节点
+                // nodeType 这个属性
+                if (children[i].nodeType ==1) {
+                    result.push(children[i]);
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

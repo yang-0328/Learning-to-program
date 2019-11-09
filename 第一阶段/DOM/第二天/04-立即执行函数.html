@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            ul {
+                list-style: none;
+            }
+    
+            .dot .dot-item {
+                width: 10px;
+                height: 10px;
+                float: left;
+                margin: 0 10px;
+            }
+    
+            .dot .dot-item a {
+                display: block;
+                width: 6px;
+                height: 6px;
+                background-color: rgba(0, 0, 0, .4);
+                border: 2px solid rgba(255, 255, 255, .4);
+                border-radius: 50%;
+            }
+    
+            .dot .dot-item a:hover {
+                background-color: rgba(255, 255, 255, .4);
+                border: 2px solid rgba(0, 0, 0, .4);
+    
+            }
+    
+            .dot .dot-item.active a {
+                background-color: rgba(255, 255, 255, .4);
+                border: 2px solid rgba(0, 0, 0, .4);
+            }
+        </style>
+</head>
+<body>
+        <ul class="dot">
+                <li class="dot-item active">
+                    <a href="#"></a>
+                </li>
+                <li class="dot-item">
+                    <a href="#"></a>
+                </li>
+                <li class="dot-item">
+                    <a href="#"></a>
+                </li>
+                <li class="dot-item">
+                    <a href="#"></a>
+                </li>
+                <li class="dot-item">
+                    <a href="#"></a>
+                </li>
+            </ul>
+
+
+
+
+
+
+    <script>
+    var dotItems = document.getElementsByClassName('dot-item');
+    for (var i = 0; i < dotItems.length; i++) {
+        dotItems[i].index = i;
+        dotItems[i].onclick = (function (n) {
+// return 函数的时候  会把  这个函数所在 作用域下的所有变量,一块 return 出去(放在背包里)
+
+            return function () {
+                console.log(n);
+            }
+        })(i);
+             // 模拟循环绑定
+            // 第0个圆点   背包里  n = 0
+            // 第1个圆点  背包里 n=1
+            // 第2个圆点   背包里  n=2
+
+            // 点击的时候  执行函数, 要找 n 这个变量 ,先在自身找,在到自己携带的背包里边去找,再到上一级作用域查找
+    }
+    //闭包函数 : 在函数外 使用 函数内部的变量
+
+    function foo() {
+        var a = 100;
+        return function () {
+            console.log(a);
+        }
+    }
+    var bar = foo();
+    bar();
+
+    </script>
+</body>
+</html>

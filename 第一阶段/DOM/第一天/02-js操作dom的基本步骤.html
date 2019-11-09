@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color:red;
+    }
+</style>
+
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <script>
+    
+    // 点击 box 时 背景色 变为绿色
+
+
+    //事件源: box
+    // 事件; click
+    // 处理程序: 背景色变绿
+
+    // 三步走
+    //1 获取事件源
+    var boxEl = document.getElementsByClassName('box')[0];//dom对象
+
+
+    //2 给事件源绑上事件
+    boxEl.onclick = function () {
+        //书写事件处理程序
+        boxEl.style.backgroundColor = 'green';
+        boxEl.style.width = '200px' ;
+    }
+    </script>
+</body>
+</html>

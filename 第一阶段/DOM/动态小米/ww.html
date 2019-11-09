@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+ 
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+		<style>
+			#qq {
+				width: 200px;
+				height: 400px;
+				background: #F9C;
+			}
+			
+			#title {
+				width: 240px;
+				height: 180px;
+				background: #FC6;
+				position: absolute;
+				top: 10px;
+				left: 220px;
+				display: none;
+			}
+		</style>
+		<script src="js/miaov.js"></script>
+		<script>
+		$(function() {
+				var qq = $('qq');
+				var title = $('title');
+				//定时器 
+				var timer=null;
+				//当鼠标移入
+				qq.οnmοusemοve=show;
+				//当鼠标移开
+				qq.οnmοuseοut=hide;
+				
+				//鼠标移入
+				title.οnmοuseοver=show;
+				//鼠标移开
+				title.οnmοuseοut=hide;
+				
+				function show(){
+					//关闭定时器 鼠标移入右侧
+					clearInterval(timer);
+					title.style.display='block';
+					
+				};
+				function hide(){
+					//定时器
+					timer=setTimeout(function(){
+						title.style.display='none';
+					},200);
+				};
+			})
+		</script>
+	</head>
+ 
+	<body>
+ 
+		<div id="qq"></div>
+		<div id="title"></div>
+	</body>
+	<script>
+		/*定时器*
+		 * var timer=setTimeout(函数,毫秒);//只执行一次
+		 * clearTimeout(timer);
+		 */
+	</script>
+ 
+</html>

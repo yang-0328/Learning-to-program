@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // .css() ; 获取样式值 和设置样式
+        $('.box').click(function () {
+            console.log(this);//原生dom对象
+            // this.css(); 错误
+            console.log($(this).css('height','30px'));// 不写第二个参数就是获取
+            //写第二个参数就是修改
+
+            // 设置单个属性
+            //修改的都是行内样式 
+            $(this).css('width', '200px'); // 修改宽为200px
+            $(this).css('height', '400px');
+            $(this).css('backgroundColor', 'red');
+            $(this).css('opacity','0.1');
+
+            // 同时添加多个属性  写成对象的形式
+            //属性名 加不加引号 都可以
+            $(this).css ({
+                color: 'red',
+                fontSize: '44px'
+            })
+        })
+    </script>
+</body>
+</html>

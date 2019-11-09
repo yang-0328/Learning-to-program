@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+           * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            float: left;
+        }
+
+        img {
+            float: left;
+            width: 200px;
+        }
+
+        .box {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        .box li {
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .box li:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+                <ul class="left">
+                    <!-- <li>呢大衣</li> -->
+                </ul>
+                <img src="images/冬裙.jpg" alt="">
+                <ul class="right">
+                    <!-- <li>呢大衣</li> -->
+                </ul>
+            </div>
+            <script src="js/data.js"></script>
+            <script src="js/jquery-3.4.1.min.js"></script>
+
+            <script>
+                initpro($('.left'), product[0]);
+                $('.left li').mouseenter(function () {
+                    var idx = $(this).index();
+
+
+                    $('img').attr('src', 'images/' + product[0][idx].img + '');
+                });
+                initpro($('.right'), product[1]);
+                $('.right li').mouseenter(function () {
+                    var idx = $(this).index();
+
+
+                    $('img').attr('src', 'images/' + product[1][idx].img + '');
+                });
+                
+                // jq动态生成
+
+                function initpro($el,arr) {
+                    var str = "";
+                    for (var i = 0; i < arr.length; i++) {
+                        str += '<li>' + arr[i].text + '</li>';
+                    }
+                    $el.html(str);
+                }
+            </script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/util.js"></script>
+	<script src="data/midata.js"></script>
+	
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,
+        ol {
+           list-style: none; 
+        }
+        a {
+            text-decoration: none;
+        }
+        .header-c,
+        .content-c,
+        .babber-c{
+            position: relative;
+            width: 1226px;
+           margin: 0 auto;
+           height: 100%;
+        }
+        .header{
+            height: 40px;
+            background-color: #333333;
+        }
+        .content{
+            height: 100px;
+            background-color: #FFFFFF;
+        }
+        .babber {
+            height: 670px;
+            background-color: #FFFFFF;
+        }
+       .header .link li{
+            display: block;
+           float: left;
+           margin-right: 10px;
+           
+       }
+       .header .link a{
+        
+        line-height: 40px;
+        font-size: 12px;
+        color: #B0B0B0;
+       }
+       /* .header li:hover span{
+           display: block;
+       } */
+       .header li:hover a{
+           display: block;
+           color: #ffffff;
+       }
+       .header .link-c{
+           float: right;
+
+       }
+       .header .link-c {
+           margin-right: 50px;
+       }
+       .header .link-c li{
+        margin-right: 10px;
+           float: left;
+           line-height: 40px;
+       }
+       .header .link-c a{
+        font-size: 12px;
+        color: #B0B0B0;
+       }
+       .link-z{
+        float: right;
+        right: 0;
+        text-align: center;
+        width: 120px;
+        height: 39px;
+        border: 0 solid ;
+        background-color:#424242;
+        
+       } 
+       .link-z a{
+        display: block;
+        font-size: 12px;
+        color: #B0B0B0;
+        line-height: 40px;
+        
+       }
+
+       .link-z span{
+            display: none; 
+            width: 300px;
+            height: 100px;
+            float: right;
+            border: 1px solid red ;
+            background-color: #ffffff;
+            font-size: 12px;
+            line-height: 100px;
+            position: relative;
+            
+       }
+        .link-z a:hover{
+       
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+        .link-z:after{
+            
+       
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+        } 
+        .link-z:hover span{
+            display: block;
+            z-index:66;
+        }
+        .content .logo {
+            display: block;
+            position: absolute;
+           bottom: 22.5px;
+            width: 55px;
+            height: 55px;
+            background-color: #FF6700;
+           
+        }
+        .content .logo-z{
+            padding: 3px;
+           border:0 solid #ff6677;
+           float: left;
+            display: block;
+            width: 49px;
+            height: 49px;
+            background: url('img/mi-logo.png') no-repeat center;
+        }
+         .logo-c{
+            padding-top: 33px;
+            display: block;
+           margin-left: 70px;
+            float:left;
+            width: 163px;
+            height: 66px;
+            background: url('img/mi-logo-ad.gif') no-repeat center;
+        }
+        .content .nav {
+            margin-left: 20px;
+            float: left; 
+            /* margin-right: 20px; */
+          
+        }
+        .content .nav li{
+            
+            float: left;
+            margin-right: 20px;
+           line-height: 100px;
+        }
+        .content .nav li a{
+            color: sienna;
+        }
+        /*.nav .nav-item span{
+            display: none; 
+             width: ; 
+            height: 100px;
+            float: bottom;
+            border: 1px solid red ;
+            background-color: #ffffff;
+            /* position: relative; 
+      }
+      .nav .nav-item:hover span{
+            display: block;
+            z-index:66;
+        }*/
+        .content .search {
+            display: block;
+            width: 295px;
+            float: right;
+            height: 51px;
+            margin-top: 23px;
+            border: 1px solid bisque;
+            
+        }
+      
+        .content .div:hover .search{
+            display: block;
+            height: 51px; 
+            border:1px solid red;
+            width: 295px;
+           
+        }
+       .content .search .input-c{
+            display: block;
+            outline:none;
+            border: 0px;
+          
+            float: left;
+            width: 238px;
+            height: 51px;
+           
+            
+        }
+        .content .search .input-z{
+            background: url('img/search.png') no-repeat center;
+           display: block;
+            float: right;
+            width: 53px;
+            height: 51px;
+            border-left: 1px solid red;
+            
+        }
+       .content span:hover .input-z {
+            
+            display: block;
+            background: url('img/search.png') no-repeat center;
+            background-color: red;
+        }
+        .babber .arr {
+            position: absolute;
+            top: 50%;
+            margin-top: -155px;
+            width: 40px;
+            height: 70px;
+        }
+        .babber .arr.arr-l {
+            left: 234px;
+            /* 精灵图片的使用 */
+            /* 雪碧图  sprite */
+            background: url('img/arr.png') no-repeat -84px center;
+        }
+
+         .babber .arr.arr-l:hover {
+            background-position: 0 center;
+        }
+
+        .babber .arr.arr-r {
+            /* left: auto; */
+            /* 不听 left */
+            right: 0;
+            background: url('img/arr.png') no-repeat -124px center;
+        }
+
+        .babber .arr.arr-r:hover {
+            background-position: -41.5px center;
+        }
+
+         .babber .img {
+           width: 100%;
+           height: 460px;
+           
+           /* background: url('img/m1.jpg') no-repeat ; */
+            position: absolute;
+       }
+       .babber .navigation {
+           padding: 20px 0;
+           position: absolute;
+           float: left;
+           width: 234px; 
+           height: 420px;   
+           background-color: rgba(0, 0, 0, .5);
+           line-height:42px;
+          
+       } 
+       .babber .navigation .nav-item{
+       text-align: center;
+       }
+       .babber .nav-item:hover a{
+           display: block;
+           background-color: brown;
+          
+       }
+       .babber .dot {
+            position: absolute;
+            right: 50px;
+            bottom: 250px;
+            /* width: 100px;
+            height: 20px; */
+            /* background-color: red; */
+        }
+
+        .dot .dot-item {
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin: 0 10px;
+        }
+
+        .dot .dot-item a {
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(0, 0, 0, .4);
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 50%;
+        }
+
+        .dot .dot-item a:hover {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+
+        }
+
+        .dot .dot-item.active a {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-c">
+                
+                <ul class="link">
+                    <li><a href="#">小米商城</a>
+                    <span></span></li>
+                    <li><a href="#">MIUI</a>
+                    <span></span></li>
+                    <li><a href="#">loT</a>
+                    <span></span></li>
+                    <li><a href="#">云服务</a>
+                    <span></span></li>
+                    <li><a href="#">金融</a>
+                    <span></span></li>
+                    <li><a href="#">有品</a>
+                    <span></span></li>
+                    <li><a href="#">小爱开放平台</a>
+                    <span></span></li>
+                    <li><a href="#">企业团购</a>
+                    <span></span></li>
+                    <li><a href="#">资质证件</a>
+                    <span></span></li>
+                    <li><a href="#">协议规则</a>
+                    <span></span></li>
+                    <li class="QrCode"><a href="#">下载app</a>
+                    <span></span></li>
+                    <li><a href="#">Select Loccation</a>
+                    <span></span></li>
+
+                </ul>
+                <div class="link-z">  <a href="#">购物车</a>
+                <span>购物车没有商品赶快选购吧</span></div>
+       
+                <ul class="link-c">
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+                    <li><a href="#">消息通知</a></li>
+                </ul>
+           
+ </div>
+    </div>
+    <div class="content">
+        <div class="content-c">
+            <ul class="logo">
+                <li class="logo-z"><a href="#"></a></li>
+                
+            </ul>
+            <div>
+            <li class="logo-c"> <a   href="#"></a></li>
+            </div>
+            <ul class="nav">
+                <li class="nav-item"> <a href="#">小米手机</a>
+                <span></span></li>
+                <li class="nav-item"> <a href="#">电视</a></li>
+                <li class="nav-item"> <a href="#">笔记本</a></li>
+                <li class="nav-item"> <a href="#">空调</a></li>
+                <li class="nav-item"> <a href="#">新品</a></li>
+                <li class="nav-item"> <a href="#"> 路由器</a></li>
+                <li class="nav-item"> <a href="#">智能硬件</a></li>
+                <li class="nav-item"> <a href="#">红米</a></li>
+                <li class="nav-item"> <a href="#">服务</a></li>
+                <li class="nav-item"> <a href="#"> 社区</a></li>
+            </ul>
+            <div class="div">
+                <div class="search ">
+                    <input class="input-c"   type="text">
+                    
+                    <span><a class="input-z" href="#"></a></span>
+            
+                    
+             </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="babber">
+        <div class="babber-c">
+            <a class="img" href="#">
+                <img src="img/m1.jpg" alt="">
+            </a>
+            <ul class="navigation">
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+                <li class="nav-item"><a href="#">手机 电话卡</a></li>
+            </ul>
+            
+            <a href="#" class="arr arr-l"></a>
+            <a href="#" class="arr arr-r"></a>
+            <ul class="dot">
+                    <li class="dot-item active">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+
+    <script>
+        var imgArr = ['m1.jpg', 'm2.jpg', 'm3.jpg', 'm4.jpg', 'm5.jpg'];
+        var arrR = document.getElementsByClassName('arr-r')[0];
+        var arrL = document.getElementsByClassName('arr-l')[0];
+        var imgEl = document.getElementsByTagName('img')[0];
+        var dotItems = document.getElementsByClassName('dot-item');
+
+        // 计数器
+        var count = 0;
+        //箭头绑定事件
+        arrR.onclick = function () {
+            count++;
+            if (count >= 5) {
+                count = 0;
+            }
+            setImg();
+            
+        }
+        //箭头绑定事件
+        arrL.onclick = function () {
+            count--;
+            if (count < 0) {
+                count = 4;
+            }
+            setImg();
+        }
+       
+        //绑定分页事件
+        for (var i = 0; i < dotItems.length; i++) {
+            dotItems[i].index = i;
+            dotItems[i].onclick = function () {
+
+                console.log(this.index);
+                var index = this.index;
+                // 同步 count
+                count = index;
+                setImg();
+            
+            }
+        }
+
+        //图片封装函数
+        function setImg() {
+            imgEl.src = 'img/' + imgArr[count];
+            for (var i = 0; i < dotItems.length; i++) {
+                dotItems[i].classList.remove('active');
+            }
+            dotItems[count].classList.add('active');
+            
+        } 
+         // 循环执行 ,每隔一段时间就执行一次
+        
+            var arrR = setInterval(function () {
+              
+                
+                
+        }, 1000);
+        
+   
+       
+
+    </script>
+    
+</body>
+</html>

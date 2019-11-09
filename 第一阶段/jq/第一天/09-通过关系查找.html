@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="li-item">li1</li>
+        <li class="li-item">li2</li>
+        <li class="li-item">li3</li>
+        <li class="li-item">li4</li>
+        <li class="li-item active">li5</li>
+        <li class="li-item">li6</li>
+        <li class="li-item">li7</li>
+        <li class="li-item">li8</li>
+        <li class="li-item li9">li9</li>
+        <li class="li-item">li10</li>
+        <p>今天</p>
+    </ul>
+    <div class="box">
+        <div class="inner-box">
+            innerbox
+            <p>不凡学院</p>
+        </div>
+        <p>天气很好</p>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    // eq(index);
+    // find();
+    // siblings();除自己以外的所有兄弟节点
+    // shildren();所有孩子节点
+    // next();下一个兄弟节点
+    // nextAll;后面的所有兄弟节点
+    // nextUntil();后面的兄弟节点,直到...
+    // prev();上一个兄弟节点
+    // prevAll();
+    // prevUntil();
+    // parent(); 父节点
+    // parents(); 所有父节点
+    // parentsUntil();
+
+
+        //next() 下一个兄弟
+        $('li.active').next().css('color', 'red');
+        //从第五个之后所有兄弟节点
+        $('li.active').nextAll().css('color', 'green');
+        // 第五个之后 第九个之前的兄弟
+        $('li.active').nextUntil('.li9').css('color', 'pink');
+
+        //亲生父元素
+        console.log($('li.active').parent());
+
+        //所有的父元素 ( ul, body, html)
+        console.log($('li.active').parents());
+
+        // 自己的所有亲生元素
+//li.li-item, li.li-item, li.li-item, li.li-item, li.li-item.active,
+// li.li-item, li.li-item, li.li-item, li.li-item.li9, li.li-item, p,
+        console.log($('ul').children());
+
+
+        //除自己以外的所有兄弟节点
+        $('li.active').siblings().css('background-color', 'orange');
+
+
+// ; 符合条件的后代节点  find()
+        $('.box').find('p').css('color', 'red');
+
+        //符合eq(下标的元素);
+        $('li').eq(3).css('background-color', 'pink');5
+    </script>
+</body>
+</html>

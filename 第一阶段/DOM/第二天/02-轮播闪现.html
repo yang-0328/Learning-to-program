@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .banner {
+            position: relative;
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+        }
+
+        .banner .img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner .side {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 234px;
+            height: 420px;
+            background-color: rgba(0, 0, 0, .5);
+            padding: 20px 0;
+        }
+
+        .side .side-item {
+            width: 100%;
+            height: 42px;
+        }
+
+        .side .side-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            line-height: 42px;
+            text-indent: 30px;
+            background: url('img/arrow.png') no-repeat 200px center;
+        }
+
+        .side .side-item a:hover {
+            background-color: orange;
+        }
+
+        .banner .arr {
+            position: absolute;
+            /* left: 234px; */
+            /* top: 195px; */
+            top: 50%;
+            /* 多移动了 自身高度的一半 */
+            margin-top: -35px;
+            width: 40px;
+            height: 70px;
+        }
+
+        .banner .arr.arr-l {
+            left: 234px;
+            /* 精灵图片的使用 */
+            /* 雪碧图  sprite */
+            background: url('img/arr.png') no-repeat -84px center;
+        }
+
+        .banner .arr.arr-l:hover {
+            background-position: 0 center;
+        }
+
+        .banner .arr.arr-r {
+            /* left: auto; */
+            /* 不听 left */
+            right: 0;
+            background: url('img/arr.png') no-repeat -124px center;
+        }
+
+        .banner .arr.arr-r:hover {
+            background-position: -42px center;
+        }
+
+        .banner .dot {
+            position: absolute;
+            right: 50px;
+            bottom: 30px;
+            /* width: 100px;
+            height: 20px; */
+            /* background-color: red; */
+        }
+
+        .dot .dot-item {
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin: 0 10px;
+        }
+
+        .dot .dot-item a {
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(0, 0, 0, .4);
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 50%;
+        }
+
+        .dot .dot-item a:hover {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+
+        }
+
+        .dot .dot-item.active a {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+        }
+    </style>
+</head>
+<body>
+        <div class="banner">
+                <a class="img" href="#">
+                    <img src="img/m1.jpg" alt="">
+                </a>
+                <ul class="side">
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">手机 电话卡</a>
+                    </li>
+                </ul>
+                <!-- 箭头 -->
+                <a href="#" class="arr arr-l"></a>
+                <a href="#" class="arr arr-r"></a>
+        
+                <!-- 圆点 -->
+                <ul class="dot">
+                    <li class="dot-item active">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                    <li class="dot-item">
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+
+
+        <script>
+        //模拟后台图片数据
+        var imgArr = ['m1.jpg', 'm2.jpg', 'm3.jpg', 'm4.jpg', 'm5.jpg'];
+        var imgEl = document.getElementsByTagName('img')[0];
+        var arrL = document.getElementsByClassName('arr-l')[0];
+        var arrR = document.getElementsByClassName('arr-r')[0];
+        var dots = document.getElementsByClassName('dot-item');
+        var count = 0;//计数器 记录点击次数
+        arrR.onclick = function () {
+            count++;
+            // 考虑边缘情况
+            if (count == 5) {
+                count =0;
+            }
+            setImg();
+        }
+        arrL.onclick = function () {
+            count--;
+            //考虑边缘情况
+            if (count == -1) {
+                count = 4;
+            }
+            setImg();
+        }
+        //分页器的点击事件
+        for (var i = 0; i < dots.length; i++) {
+            //循环绑定时 给每个小圆点追加index 属性 保存 其对应的下标
+            dots[i].index = i;
+            dots[i].onclick = function () {
+                //首先需要获得当前点击的这个小圆点的下标
+                console.log(this.index);
+                count  = this.index;
+                setImg();
+            }
+        }
+       //设置图片 和 激活样式
+       function setImg() {
+        imgEl.src = 'img/' + imgArr[count] + '';
+           //小圆点样式更改
+           for (var i = 0; i < dots.length; i++) {
+               dots[i].classList.remove('active');
+           }
+           dots[count].classList.add('active');
+       }     
+
+        </script>
+</body>
+</html>

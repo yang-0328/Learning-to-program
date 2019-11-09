@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>清除循环定时器</button>
+    <button>清除延迟定时器</button>
+    
+    <script>
+        var btm = document.querySelectorAll('button');
+        // 延迟执行 第一次参数 要执行的参数 第二个 参数 延迟时间 毫秒单位
+        var timerl = setTimeout(function () {
+            console.log('你好');
+        },5000)
+
+
+        //循环执行  每个一段时间就执行一次
+
+        var timer = setInterval(function () {
+            console.log('不凡')
+        }, 1000);
+
+        //清楚定时器
+        btm[0].onclick = function () {
+            clearInterval(timer);
+        }
+        btm[1].onclick = function () {
+            clearInterval(timerl);
+        }
+    </script>  
+</body>
+</html>
